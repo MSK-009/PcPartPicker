@@ -13,3 +13,14 @@ Steps ( **Pre requisites**: ```Install git``` and ```login to your githut accoun
 ```commit -> write commit comment -> click on ✔ -> Sync Changes```
 8. After completing your work, pull request to msk by clicking 
 ![tutorial](/public/TUTORIAL.png)
+
+
+## CAUTION!!!!!!!!!! Update your repo from MSK's repo to be uptodate
+
+Steps  
+1. ```git remote add upstream https://github.com/admin/repo.git``` do this only the first time
+2. ```git fetch upstream```
+3. ```git checkout main```
+4. ```git merge upstream/main```
+
+Apka locally update hojaega then aap kaam karen aur phir commit push krden... then pull request bana den ezwpgg
