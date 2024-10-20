@@ -1,8 +1,8 @@
 # Pc Parts Picker
 Ecommerce Website - Group project for Human Computer Interation Course  
-
+MEOW
 ## To become a contributor
-Steps  
+Steps ( **Pre requisites**: ```Install git``` and ```login to your githut account``` in VSCODE )  
 1. Fork Repository
 2. go to VSCODE
 3. Search on top write : ```>Git: Clone```, then hit enter
