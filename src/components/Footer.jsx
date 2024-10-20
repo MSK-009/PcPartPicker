@@ -1,43 +1,38 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import logo from "/logoFooter.png"
 const Footer = () => {
     return (
 
         <footer className="text-center text-lg-start text-muted bg-success-subtle text-success-emphasis">
-            <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-                <div className="me-5 d-none d-lg-block">
-                    <span>Get connected with us on social networks:</span>
-                </div>
-                <div>
-                    <Link to="/" className="me-4 text-reset">
-                        <i className="fab fa-facebook-f"></i>
-                    </Link>
-                    <Link to="/" className="me-4 text-reset">
-                        <i className="fab fa-twitter"></i>
-                    </Link>
-                    <Link to="/" className="me-4 text-reset">
-                        <i className="fab fa-google"></i>
-                    </Link>
-                    <Link to="/" className="me-4 text-reset">
-                        <i className="fab fa-instagram"></i>
-                    </Link>
-                    <Link to="/" className="me-4 text-reset">
-                        <i className="fab fa-linkedin"></i>
-                    </Link>
-                    <Link to="/" className="me-4 text-reset">
-                        <i className="fab fa-github"></i>
-                    </Link>
-                </div>
-            </section>
-
-            <section className="">
+            <section className="my-5 py-5">
                 <div className="container text-center text-md-start mt-5">
                     <div className="row mt-3">
                         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <h6 className="text-uppercase fw-bold mb-4">
-                                <i className="fa-solid fa-toolbox me-3"></i>Pc Parts Picker
+                            <img src={logo} style={{height:"50px", filter:"invert(1)", marginRight:"10px"}} alt="" /> Pc Parts Picker
                             </h6>
+                            <div>
+                                <Link to="/" className="me-4 text-reset">
+                                    <i className="fab fa-facebook-f"></i>
+                                </Link>
+                                <Link to="/" className="me-4 text-reset">
+                                    <i className="fab fa-twitter"></i>
+                                </Link>
+                                <Link to="/" className="me-4 text-reset">
+                                    <i className="fab fa-google"></i>
+                                </Link>
+                                <Link to="/" className="me-4 text-reset">
+                                    <i className="fab fa-instagram"></i>
+                                </Link>
+                                <Link to="/" className="me-4 text-reset">
+                                    <i className="fab fa-linkedin"></i>
+                                </Link>
+                                <Link to="/" className="me-4 text-reset">
+                                    <i className="fab fa-github"></i>
+                                </Link>
+                            </div>
+                            <br />
                             <p>
                                 Here you can use rows and columns to organize your footer content. Lorem ipsum
                                 dolor sit amet, consectetur adipisicing elit.
