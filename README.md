@@ -9,6 +9,8 @@ Steps
 4. select Repository name ```/PcPartPicker```
 5. A folder will be created at the destination you pick open that folder in VSCODE
 6. Work on your designated file only (component)
+   *Note: Always use ```git fetch``` git bash command in your console before starting 
+    any work on your own branch
 7. COMMIT from vscode's source control menu   
 ```commit -> write commit comment -> click on ✔ -> Sync Changes```
 8. After completing your work, pull request to msk by clicking 
