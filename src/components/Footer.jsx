@@ -40,36 +40,32 @@ const Footer = () => {
                         </div>
                         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                             <h6 className="text-uppercase fw-bold mb-4">
-                                Products
+                                Parts
                             </h6>
                             <p>
-                                <Link to="/" className="text-reset">Angular</Link>
+                                <Link to="/processors" className="text-reset">Processor</Link>
                             </p>
                             <p>
-                                <Link to="/" className="text-reset">React</Link>
+                                <Link to="/gpu" className="text-reset">Graphics Card</Link>
                             </p>
                             <p>
-                                <Link to="/" className="text-reset">Vue</Link>
+                                <Link to="/motherboard" className="text-reset">Motherboard</Link>
                             </p>
                             <p>
-                                <Link to="/" className="text-reset">Laravel</Link>
+                                <Link to="/memory" className="text-reset">RAM</Link>
                             </p>
                         </div>
                         <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <h6 className="text-uppercase fw-bold mb-4">
-                                Useful links
+                            <h6 className="text-uppercase fw-bold mb-5">
                             </h6>
                             <p>
-                                <Link to="/" className="text-reset">Pricing</Link>
+                                <Link to="/storage" className="text-reset">Storage</Link>
                             </p>
                             <p>
-                                <Link to="/" className="text-reset">Settings</Link>
+                                <Link to="/cases" className="text-reset">PC Case</Link>
                             </p>
                             <p>
-                                <Link to="/" className="text-reset">Orders</Link>
-                            </p>
-                            <p>
-                                <Link to="/" className="text-reset">Help</Link>
+                                <Link to="/psu" className="text-reset">Power Supply Unit</Link>
                             </p>
                         </div>
 
@@ -87,7 +83,7 @@ const Footer = () => {
                 </div>
             </section>
 
-            <div className="text-center p-4" style={{backgroundColor: "rgba(0, 0, 0, 0.05);"}}>
+            <div className="text-center p-4" style={{backgroundColor: "rgba(0, 0, 0, 0.05)"}}>
                 © 2024 Copyright:&nbsp;
                 <Link className="text-reset fw-bold" to="https://github.com/MSK-009/PcPartPicker" target='_blank'>Visit Github</Link>
             </div>

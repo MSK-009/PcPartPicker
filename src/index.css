@@ -1,37 +1,174 @@
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: black;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(114, 199, 111);
+  box-shadow: inset 0 0 6px rgb(73, 180, 69);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(30, 94, 28);
+}
+
+
+
+.card {
+  transition: all 0.5s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card .backgroundEffect {
+  bottom: 0;
+  height: 0px;
+  width: 100%
+}
+
+.card:hover {
+  color: #4fb446;
+  transform: scale(1.025);
+  box-shadow: rgba(68, 184, 45, 0.877) 0px 5px 10px
+}
+
+.card:hover .backgroundEffect {
+  bottom: 0;
+  height: 320px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background: #54b96da4;
+  animation: popBackground 0.3s ease-in
+}
+
+@keyframes popBackground {
+  0% {
+      height: 20px;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%
   }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+
+  50% {
+      height: 80px;
+      border-top-left-radius: 75%;
+      border-top-right-radius: 75%
   }
-  
-  a{
-    text-decoration: none;
+
+  75% {
+      height: 160px;
+      border-top-left-radius: 85%;
+      border-top-right-radius: 85%
   }
-  
-  
-  ::-webkit-scrollbar {
-    width: 10px;
+
+  100% {
+      height: 320px;
+      border-top-left-radius: 100%;
+      border-top-right-radius: 100%
   }
-  
-  ::-webkit-scrollbar-track {
-    background-color: darkgrey;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: rgb(114, 199, 111);
-    box-shadow: inset 0 0 6px rgb(73, 180, 69);
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(30, 94, 28);
-  }
+}
+
+.card .pic {
+  position: relative
+}
+
+.card .pic img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover
+}
+
+.card .date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 70px;
+  background-color: #1b9ce3;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  transition: all ease
+}
+
+.card .date .day {
+  font-size: 14px;
+  font-weight: 600
+}
+
+.card .date .month,
+.card .date .year {
+  font-size: 10px
+}
+
+.card .text-muted {
+  font-size: 12px
+}
+
+.card:hover .text-muted {
+  color: #fff !important
+}
+
+.card .content {
+  padding: 0 20px
+}
+
+.card .content .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  background-color: #4da85c;
+  border-radius: 25px;
+  font-size: 12px;
+  border: none
+}
+
+.card:hover .content .btn {
+  background: #fff;
+  color: #1be357;
+  box-shadow: #0000001a 0px 3px 5px
+}
+
+.card .content .btn .fas {
+  font-size: 10px;
+  padding-left: 5px
+}
+
+.card .content .foot .price {
+  color: #1b9ce3;
+  font-size: 12px
+}
+
+.card:hover .content .foot .price {
+  color: #fff
+}
+
+.card .content .foot .icon {
+  font-size: 12px
+}
   

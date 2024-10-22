@@ -31,15 +31,15 @@ const Navbar = ({openWindow, updateContent}) => {
                                 Parts
                             </Link>
                             <ul className="dropdown-menu bg-success">
-                                <li><Link className="dropdown-item" to="/">Processor</Link></li>
-                                <li><Link className="dropdown-item" to="/">Graphics Card</Link></li>
-                                <li><Link className="dropdown-item" to="/">Motherboard</Link></li>
+                                <li><Link className="dropdown-item" to="/processors">Processor</Link></li>
+                                <li><Link className="dropdown-item" to="/gpu">Graphics Card</Link></li>
+                                <li><Link className="dropdown-item" to="/motherboard">Motherboard</Link></li>
                                 <li><hr className="dropdown-divider" /></li>
-                                <li><Link className="dropdown-item" to="/">RAM</Link></li>
-                                <li><Link className="dropdown-item" to="/">Storage</Link></li>
-                                <li><Link className="dropdown-item" to="/">Case</Link></li>
+                                <li><Link className="dropdown-item" to="/memory">RAM</Link></li>
+                                <li><Link className="dropdown-item" to="/storage">Storage</Link></li>
+                                <li><Link className="dropdown-item" to="/cases">Case</Link></li>
                                 <li><hr className="dropdown-divider" /></li>
-                                <li><Link className="dropdown-item" to="/">Power Supply Unit</Link></li>
+                                <li><Link className="dropdown-item" to="/psu">Power Supply Unit</Link></li>
 
                             </ul>
                         </li>

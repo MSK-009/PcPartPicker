@@ -11,6 +11,10 @@ import Home from './pages/Landing';
 import Footer from './components/Footer';
 import Window from './components/Window';
 import Contact from './pages/Contact';
+import Processors from './components/Parts/Processors';
+
+
+import ListState from './context/list/ListState';
 
 function App() {
   const [showWindow, setShowWindow] = useState(false);
@@ -37,17 +41,21 @@ function App() {
       };
   return (
     <>
+    <ListState>
         <Window showWindow={showWindow} windowContent={windowContent} closeWindow={closeWindow}/>
         <BrowserRouter>
           <Navbar openWindow={openWindow} updateContent={updateContent}/>
-          <div className='container'>
+          <div>
             <Routes>
               <Route exact path="/" element={ <Home openWindow={openWindow} updateContent={updateContent}/> } />
               <Route exact path="/about" element={ <Contact/>}/>
+              <Route exact path="/processors" element={ <Processors /> } />
+
             </Routes>
           </div>
           <Footer/>
         </BrowserRouter>
+    </ListState>
     </>
   )
 }
