@@ -2,3 +2,7 @@
     color: white;
     background: #1E7347; 
   }
+
+  .list-group-item:hover {
+    color: #28a745;
+  }

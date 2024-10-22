@@ -89,7 +89,7 @@ const Search = () => {
           {results.map((gpu, index) => (
             <li 
               key={index}
-              className="list-group-item list-group-item-action"
+              className="bg-light list-group-item list-group-item-action cursor-grab"
               onClick={() => handleSelect(gpu)}
             >
               {gpu.GPU_name} - {gpu.Price}

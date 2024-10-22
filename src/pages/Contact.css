@@ -79,6 +79,7 @@
         margin: 0 auto 1rem;
         border-radius: 50%;
         display: block;
+        pointer-events: none;
     }
     #reviews-62 .cs-name {
         font-size: 1.25rem;
@@ -155,5 +156,6 @@
         width: clamp(31.5%, 30vw, 32.3%);
     }
 }
-
-                                
+.hover-text-success:hover {
+    color: #1E7347 !important; /* This is Bootstrap's text-success color */
+}
