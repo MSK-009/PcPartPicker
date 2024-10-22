@@ -18,7 +18,7 @@ Steps ( **Pre requisites**: ```Install git``` and ```login to your githut accoun
 ## CAUTION!!!!!!!!!! Update your repo from MSK's repo to be uptodate
 
 Steps  
-1. ```git remote add upstream https://github.com/admin/repo.git``` do this only the first time
+1. ```git remote add upstream https://github.com/MSK-009/PcPartPicker.git``` do this only the first time
 2. ```git fetch upstream```
 3. ```git checkout main```
 4. ```git merge upstream/main```<br/>
