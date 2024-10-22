@@ -74,15 +74,15 @@ const Contact = () => {
     return (
         <>
             <div>
-            <div class="text-light about-section paddingTB60 gray-bg" style={{marginTop:"50px"}}>
-                <div class="container">
-                    <div class="row">
-						<div class="col-md-7 col-sm-6">
-							<div class="about-title clearfix">
+            <div className="text-light about-section paddingTB60 gray-bg" style={{marginTop:"50px"}}>
+                <div className="container">
+                    <div className="row">
+						<div className="col-md-7 col-sm-6">
+							<div className="about-title clearfix">
 								<h1>About <span className="text-success">PcPartPicker</span></h1>
 								<h3>Build Your Dream PC! </h3>
                                 <hr />
-								<p class="about-paddingB">At PCPartPicker, we empower you to build the perfect PC with ease. Our interactive web app provides a seamless experience for users of all expertise levels, from seasoned builders to first-time enthusiasts. With a vast selection of components, real-time compatibility checks, and live price comparisons, you can confidently create a custom PC that meets your performance, budget, and aesthetic needs.</p>
+								<p className="about-paddingB">At PCPartPicker, we empower you to build the perfect PC with ease. Our interactive web app provides a seamless experience for users of all expertise levels, from seasoned builders to first-time enthusiasts. With a vast selection of components, real-time compatibility checks, and live price comparisons, you can confidently create a custom PC that meets your performance, budget, and aesthetic needs.</p>
                                 <hr />
 								<p>We are passionate about simplifying the PC building process, offering tools that ensure your parts work together without any hassle. Whether you're creating a gaming rig, a workstation, or a budget-friendly setup, PCPartPicker is here to guide you from start to finish. Happy building!</p>
                                 <div>

@@ -146,10 +146,10 @@ const Processors = () => {
         </button>
         <div>
           <div className="collapse d-sm-none" id="collapseExample">
-            <div class="input-group">
-              <input type="search" class="form-control" id="searchWithIcon" placeholder="Search.." aria-label="Search" aria-describedby="searchIcon" />
-              <button class="btn btn-success" id="searchIcon">
-                <i class="bi bi-search"></i>
+            <div className="input-group">
+              <input type="search" className="form-control" id="searchWithIcon" placeholder="Search.." aria-label="Search" aria-describedby="searchIcon" />
+              <button className="btn btn-success" id="searchIcon">
+                <i className="bi bi-search"></i>
               </button>
             </div>
 
@@ -157,11 +157,11 @@ const Processors = () => {
 
           {/* For all sizes above 576px */}
           <div className="d-none d-sm-block">
-            <div class="mb-3">
-              <div class="input-group">
-                <input type="search" class="form-control" id="searchWithIcon" placeholder="Search..." aria-label="Search" aria-describedby="searchIcon" />
-                <button class="btn btn-success" id="searchIcon">
-                  <i class="bi bi-search"></i>
+            <div className="mb-3">
+              <div className="input-group">
+                <input type="search" className="form-control" id="searchWithIcon" placeholder="Search..." aria-label="Search" aria-describedby="searchIcon" />
+                <button className="btn btn-success" id="searchIcon">
+                  <i className="bi bi-search"></i>
                 </button>
               </div>
             </div>
@@ -172,7 +172,7 @@ const Processors = () => {
                 <div className='text-light' key={index} style={{ padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
                   {key}: {value.CPU_name}
                   <button style={{ cursor: 'pointer', border: 'none', background: "none", color: "red"}} onClick={() => { removeItem(key) }}>
-                  <i class="fa-solid fa-xmark"></i>
+                  <i className="fa-solid fa-xmark"></i>
                   </button>
                 </div>
               ))}
