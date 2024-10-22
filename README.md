@@ -21,7 +21,7 @@ Steps
 1. ```git remote add upstream https://github.com/admin/repo.git``` do this only the first time
 2. ```git fetch upstream```
 3. ```git checkout main```
-4. ```git merge upstream/main```
+4. ```git merge upstream/main```< br / >
     OR
 just do this instead: ```git pull origin main``` for updating your local work with main branch changes
  
