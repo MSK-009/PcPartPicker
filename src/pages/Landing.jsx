@@ -72,12 +72,12 @@ const Home = ({openWindow, updateContent}) => {
 
       <div className='d-flex gap-5 my-5 flex-wrap justify-content-center'>
 
-        <div className="card bg-success-subtle" style={{width: "18rem"}}>
+      <div className="card bg-success-subtle" style={{width: "18rem"}}>
           <img src="./assets/cpu.webp" className="card-img-top h-50" alt="..." />
           <div className="card-body">
             <h5 className="card-title">Processor</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/" className="btn btn-success">Go somewhere</Link>
+            <p className="card-text">Build your ultimate gaming rig with top-tier processors for unbeatable performance!</p>
+            <Link to="/processors" className="btn btn-success">Go somewhere</Link>
           </div>
         </div>
 
@@ -86,7 +86,7 @@ const Home = ({openWindow, updateContent}) => {
           <div className="card-body">
             <h5 className="card-title">Graphics Card</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/" className="btn btn-success">Go somewhere</Link>
+            <Link to="/gpu" className="btn btn-success">Go somewhere</Link>
           </div>
         </div>
 
@@ -95,7 +95,7 @@ const Home = ({openWindow, updateContent}) => {
           <div className="card-body">
             <h5 className="card-title">Motherboard</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/" className="btn btn-success">Go somewhere</Link>
+            <Link to="/motherboard" className="btn btn-success">Go somewhere</Link>
           </div>
         </div>
 
@@ -104,7 +104,7 @@ const Home = ({openWindow, updateContent}) => {
           <div className="card-body">
             <h5 className="card-title">RAM</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/" className="btn btn-success">Go somewhere</Link>
+            <Link to="/memory" className="btn btn-success">Go somewhere</Link>
           </div>
         </div>
 
@@ -113,7 +113,7 @@ const Home = ({openWindow, updateContent}) => {
           <div className="card-body">
             <h5 className="card-title">Storage</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/" className="btn btn-success">Go somewhere</Link>
+            <Link to="/storage" className="btn btn-success">Go somewhere</Link>
           </div>
         </div>
 
@@ -122,7 +122,7 @@ const Home = ({openWindow, updateContent}) => {
           <div className="card-body">
             <h5 className="card-title">Case</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/" className="btn btn-success">Go somewhere</Link>
+            <Link to="/cases" className="btn btn-success">Go somewhere</Link>
           </div>
         </div>
 
@@ -131,9 +131,10 @@ const Home = ({openWindow, updateContent}) => {
           <div className="card-body">
             <h5 className="card-title">PSU</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/" className="btn btn-success">Go somewhere</Link>
+            <Link to="/psu" className="btn btn-success">Go somewhere</Link>
           </div>
         </div>
+
 
 
 
