@@ -22,5 +22,6 @@ Steps
 2. ```git fetch upstream```
 3. ```git checkout main```
 4. ```git merge upstream/main```
-
+    OR
+just do this: ```git pull origin main``` 
 Apka locally update hojaega then aap kaam karen aur phir commit push krden... then pull request bana den ezwpgg
