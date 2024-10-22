@@ -5,7 +5,7 @@ import {
     Link
   } from "react-router-dom";
   import Search from './Search';
-
+import { RxHamburgerMenu } from "react-icons/rx";
 const Navbar = ({openWindow, updateContent}) => {
     return (
         <div style={{zIndex:'0'}}>
