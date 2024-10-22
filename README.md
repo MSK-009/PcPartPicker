@@ -23,5 +23,6 @@ Steps
 3. ```git checkout main```
 4. ```git merge upstream/main```
     OR
-just do this: ```git pull origin main``` 
+just do this instead: ```git pull origin main``` for updating your local work with main branch changes
+ 
 Apka locally update hojaega then aap kaam karen aur phir commit push krden... then pull request bana den ezwpgg
