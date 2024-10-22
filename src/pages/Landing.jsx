@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Typed from 'typed.js';
 import { Link } from 'react-router-dom'
 
-const Home = () => {
-
+const Home = ({openWindow, updateContent}) => {
   const el = useRef(null);
 
   useEffect(() => {
@@ -28,7 +27,7 @@ const Home = () => {
               <p className="lead text-light">
                 Discover amazing features and great content right at your fingertips. Join us and explore a world of opportunities tailored just for you.
               </p>
-              <Link to="/" className="btn btn-success btn-lg mt-3 text-light">Get Started</Link>
+              <button className="btn btn-success btn-lg mt-3 text-light" onClick={() => { openWindow(); updateContent(); }}>Customize!</button>
             </div>
             <div className="col-md-6 text-center">
               <img src="./assets/pc.png" alt="Computer" className="img-fluid rounded" />
