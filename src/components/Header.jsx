@@ -4,6 +4,7 @@ import logo from "/logo.png"
 import {
     Link
   } from "react-router-dom";
+  import Search from './Search';
 
 const Navbar = ({openWindow, updateContent}) => {
     return (
@@ -43,6 +44,8 @@ const Navbar = ({openWindow, updateContent}) => {
                             </ul>
                         </li>
                     </ul>
+                <Search/>
+                    
                 </div>
             </div>
         </nav>
