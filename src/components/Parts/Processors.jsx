@@ -166,19 +166,21 @@ const Processors = () => {
               </div>
             </div>
 
-            <div onDragOver={(e) => onDragOver(e)} onDrop={(e) => onDrop(e, 'selectedItem')} style={{height: "300px", padding: '10px' }}>
-              <h3 className='text-success'>Your Parts</h3>
+            <div onDragOver={(e) => onDragOver(e)} onDrop={(e) => onDrop(e, 'selectedItem')} style={{backgroundColor:"#DCF1E4", height: "400px", width:"400px", padding: '10px', border:"5px dashed green", borderRadius:"20px" }}>
+            <div style={{margin:"20px"}}>
+              <h3 className='text-success mb-3'>Your Parts</h3>
               {selectedItem && Object.entries(selectedItem).map(([key, value], index) => (
-                <div className='text-light' key={index} style={{ padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
+                <div className='text-light bg-success' key={index} style={{ borderRadius:"8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
+                  <i class="bi-cpu"></i>
                   {key}: {value.CPU_name}
-                  <button style={{ cursor: 'pointer', border: 'none', background: "none", color: "red"}} onClick={() => { removeItem(key) }}>
+                  <button style={{ cursor: 'pointer', border: 'none', background: "none", color: "white"}} onClick={() => { removeItem(key) }}>
                   <i className="fa-solid fa-xmark"></i>
                   </button>
                 </div>
               ))}
               { Object.entries(selectedItem).length === 0 && <div className='text-info text-center' style={{marginTop: "140px"}}>Drag here to add components</div>}
             </div>
-
+            </div>
           </div>
         </div>
 
