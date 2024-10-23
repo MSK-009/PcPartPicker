@@ -1,26 +1,23 @@
 import React, { useState, useRef, useContext } from 'react'
-import Card from './Card'
+import GraphicsCard from './GraphicsCard'
 import ListContext from '../../context/list/ListContext'
-import ProcessorContext from '../../context/processors/ProcessorContext'
+import GPUContext from '../../context/gpu/GPUContext'
 
-const Processors = () => {
+const Graphics = () => {
 
 
-  const processorContext = useContext(ProcessorContext)
+  const gpuContext = useContext(GPUContext)
 
-  const { processors } = processorContext
+  const { gpus } = gpuContext
 
   const listContext = useContext(ListContext)
   const { onDragOver, onDrop, selectedItem, removeItem } = listContext
 
-  const [ processor, setProcessor ] = useState({
+  const [ gpu, setGPU ] = useState({
     name: "",
     codename: "",
-    cores: "",
     clock: "",
-    socket: "",
     process: "",
-    cache: "",
     tdp: "",
     released: ""
   })
@@ -28,21 +25,16 @@ const Processors = () => {
   const ref = useRef(null)
   const refClose = useRef(null)
 
-  const showProcessor = (currentProcessor) => {
+  const showGPU = (currentGPU) => {
     ref.current.click()
-    setProcessor({
-      image: currentProcessor.Image,
-      name: currentProcessor.CPU_name,
-      codename: currentProcessor.Codename,
-      cores: currentProcessor.Cores,
-      base: currentProcessor.Base_clock,
-      turbo: currentProcessor.Turbo_clock,
-      socket: currentProcessor.Socket,
-      process: currentProcessor.Process,
-      cache: currentProcessor.L3Cache,
-      tdp: currentProcessor.TDP,
-      released: currentProcessor.Released,
-      price: currentProcessor.Price
+    setGPU({
+      image: currentGPU.Image,
+      name: currentGPU.GPU_name,
+      codename: currentGPU.Codename,
+      process: currentGPU.Process,
+      tdp: currentGPU.TDP,
+      released: currentGPU.Released,
+      price: currentGPU.Price
 
     })
 
@@ -56,21 +48,16 @@ const Processors = () => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">{processor.name}</h1>
+              <h1 className="modal-title fs-5" id="exampleModalLabel">{gpu.name}</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <img src={processor.image} className='img-fluid'></img>
+            <img src={gpu.image} className='img-fluid'></img>
             <div className="modal-body">
-              <p>Codename: {processor.codename}</p>
-              <p>Cores: {processor.cores}</p>
-              <p>Base Clock Speed: {processor.base}</p>
-              <p>Turbo Clock Speed: {processor.turbo}</p>
-              <p>Socket: {processor.socket}</p>
-              <p>Process node: {processor.process}</p>
-              <p>L3 Cache: {processor.cache}</p>
-              <p>Power Consuption: {processor.tdp}</p>
-              <p>Released in: {processor.released}</p>
-              <p>Price: {processor.price}</p>
+              <p>Codename: {gpu.codename}</p>
+              <p>Process node: {gpu.process}</p>
+              <p>Power Consuption: {gpu.tdp}</p>
+              <p>Released in: {gpu.released}</p>
+              <p>Price: {gpu.price}</p>
             </div>
             <div className="modal-footer">
               <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -134,7 +121,7 @@ const Processors = () => {
                 {selectedItem && Object.entries(selectedItem).map(([key, value], index) => (
                   <div className='text-light bg-success' key={index} style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
                     <i className="bi-cpu"></i>
-                    {key}: { value.CPU_name || value.GPU_name}
+                    {key}: {value.CPU_name || value.GPU_name}
                     <button style={{ cursor: 'pointer', border: 'none', background: "none", color: "white" }} onClick={() => { removeItem(key) }}>
                       <i className="fa-solid fa-xmark"></i>
                     </button>
@@ -147,7 +134,7 @@ const Processors = () => {
         </div>
 
         <div onDragOver={(e) => onDragOver(e)} className='container d-flex flex-wrap gap-3 align-items-center justify-content-center'>
-          {processors.map((processor) => { return <Card processor={processor} key={processor.CPU_name} showProcessor={showProcessor} /> })}
+          {gpus.map((gpu) => { return <GraphicsCard gpu={ gpu } key={ gpu.GPU_name } showGPU={ showGPU } /> })}
         </div>
       </div>
 
@@ -156,4 +143,4 @@ const Processors = () => {
   )
 }
 
-export default Processors
+export default Graphics

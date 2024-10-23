@@ -21,6 +21,9 @@ const ListState = (props) => {
     if (sourceListName === 'Processor') {
       setSelectedItem({ ...selectedItem, Processor: data });
     }
+    else if (sourceListName === 'Graphics') {
+      setSelectedItem({ ...selectedItem, GPU: data });
+    }
   };
 
   const removeItem = (key) => {
