@@ -2,6 +2,7 @@ import React, { useState, useRef, useContext } from 'react'
 import GraphicsCard from './GraphicsCard'
 import ListContext from '../../context/list/ListContext'
 import GPUContext from '../../context/gpu/GPUContext'
+import List from '../List'
 
 const Graphics = () => {
 
@@ -11,9 +12,9 @@ const Graphics = () => {
   const { gpus } = gpuContext
 
   const listContext = useContext(ListContext)
-  const { onDragOver, onDrop, selectedItem, removeItem } = listContext
+  const { onDragOver, onDrop } = listContext
 
-  const [ gpu, setGPU ] = useState({
+  const [gpu, setGPU] = useState({
     name: "",
     codename: "",
     clock: "",
@@ -115,26 +116,17 @@ const Graphics = () => {
               </div>
             </div>
 
+
             <div onDragOver={(e) => onDragOver(e)} onDrop={(e) => onDrop(e, 'selectedItem')} style={{ backgroundColor: "#DCF1E4", height: "400px", width: "400px", padding: '10px', border: "5px dashed green", borderRadius: "20px" }}>
-              <div style={{ margin: "20px" }}>
-                <h3 className='text-success mb-3'>Your Parts</h3>
-                {selectedItem && Object.entries(selectedItem).map(([key, value], index) => (
-                  <div className='text-light bg-success' key={index} style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
-                    <i className="bi-cpu"></i>
-                    {key}: {value.CPU_name || value.GPU_name}
-                    <button style={{ cursor: 'pointer', border: 'none', background: "none", color: "white" }} onClick={() => { removeItem(key) }}>
-                      <i className="fa-solid fa-xmark"></i>
-                    </button>
-                  </div>
-                ))}
-                {Object.entries(selectedItem).length === 0 && <div className='text-info text-center' style={{ marginTop: "140px" }}>Drag here to add components</div>}
-              </div>
+
+              <List />
+
             </div>
           </div>
         </div>
 
         <div onDragOver={(e) => onDragOver(e)} className='container d-flex flex-wrap gap-3 align-items-center justify-content-center'>
-          {gpus.map((gpu) => { return <GraphicsCard gpu={ gpu } key={ gpu.GPU_name } showGPU={ showGPU } /> })}
+          {gpus.map((gpu) => { return <GraphicsCard gpu={gpu} key={gpu.GPU_name} showGPU={showGPU} /> })}
         </div>
       </div>
 
