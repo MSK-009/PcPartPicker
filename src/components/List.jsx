@@ -39,10 +39,20 @@ const List = (props) => {
       </div>}
 
 
+      {/* Case */}
+      {selectedItem.Case && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
+        <i className="bi bi-motherboard"></i>
+        Case: {selectedItem.Case.Case_name}
+        <button style={{ cursor: 'pointer', border: 'none', background: "none", color: "white" }} onClick={() => { removeItem("Case") }}>
+          <i className="fa-solid fa-xmark"></i>
+        </button>
+      </div>}
+
+
       {Object.entries(selectedItem).length === 0 && <div className='text-info text-center' style={{ marginTop: "140px" }}>Drag here to add components</div>}
     </div>
 
-    
+
 
   )
 }
