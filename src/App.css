@@ -24,9 +24,7 @@
 
 .dragging {
   opacity: 0.5;
-  /* Dim the item being dragged */
   transform: scale(1.05);
-  /* Slightly enlarge */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background-color: lime;
 }
