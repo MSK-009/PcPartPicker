@@ -1,4 +1,4 @@
-[
+const SSDs = [
     {
         "SSD_name": "Crucial P2 1000 GB",
         "Size": "1000 GB",
@@ -1491,3 +1491,5 @@
         "Price": "CDN$ 65.86"
     }
 ]
+
+export default SSDs

@@ -1,4 +1,4 @@
-[
+const PSUs = [
     {
         "PSU_name": "Corsair CX450",
         "Size": "ATX",
@@ -960,3 +960,5 @@
         "Price": "CDN$ 368.44"
     }
 ]
+
+export default PSUs

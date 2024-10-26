@@ -1,4 +1,4 @@
-[
+const GPUs = [
     {
         "GPU_name": "ASRock Radeon RX 7700 XT Phantom Gaming 12GO",
         "Series": "Radeon RX 7700 XT",
@@ -2723,3 +2723,5 @@
         "Price": "CDN$ 899.11"
     }
 ]
+
+export default GPUs

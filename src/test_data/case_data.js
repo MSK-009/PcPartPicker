@@ -1,4 +1,5 @@
-[
+
+const Cases = [
     {
         "Case_name": "Corsair 4000D Airflow Tempered Glass Midi-Tower - white Window",
         "Size": "E-ATX",
@@ -2694,3 +2695,5 @@
         "Price": "CDN$ 100.91"
     }
 ]
+
+export default Cases;

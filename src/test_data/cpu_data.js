@@ -1,4 +1,4 @@
-[
+const Processors = [
     {
         "CPU_name": "AMD Ryzen 5 5600X",
         "Socket": "AM4",
@@ -3276,3 +3276,5 @@
         "Price": "N/A"
     }
 ]
+
+export default Processors

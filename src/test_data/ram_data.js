@@ -1,4 +1,4 @@
-[
+const RAMs = [
     {
         "RAM_name": "Corsair Vengeance LPX Series black DDR4-3200",
         "Size": "16 GB",
@@ -4718,3 +4718,5 @@
         "Price": "CDN$ 215.76"
     }
 ]
+
+export default RAMs

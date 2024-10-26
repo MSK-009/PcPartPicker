@@ -1,4 +1,4 @@
-[
+const Motherboards = [
     {
         "Motherboard_name": "MSI B550-A Pro",
         "Size": "ATX",
@@ -3440,3 +3440,5 @@
         "Price": "CDN$ 254.29"
     }
 ]
+
+export default Motherboards
