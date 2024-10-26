@@ -8,7 +8,7 @@ const Card = (props) => {
 
     return (
         <>
-            <div draggable={ !selectedItem.Processor ? "true": "false"} onDragStart={(e) => onDragStart(e, props.processor, 'Processor')} className="card border-0 me-lg-4 mb-lg-0 mb-4" onClick={()=>{props.showProcessor(props.processor)}} style={{width: "18rem", opacity: selectedItem.Processor?'0.6':'1'}}>
+            <div draggable={ !selectedItem.Processor ? "true": "false"} onDragStart={(e) => onDragStart(e, props.processor, 'Processor')} onDragEnd={ (e)=>{ e.currentTarget.classList.remove("dragging") } } className="card border-0 me-lg-4 mb-lg-0 mb-4" onClick={()=>{props.showProcessor(props.processor)}} style={{width: "18rem", opacity: selectedItem.Processor?'0.6':'1'}}>
                 <div className="backgroundEffect"></div>
                 <div className="pic">
                     <img className="" src={props.processor.Image} draggable={false} alt="" />

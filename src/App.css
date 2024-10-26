@@ -1,8 +1,32 @@
 ::selection {
-    color: white;
-    background: #1E7347; 
-  }
+  color: white;
+  background: #1E7347;
+}
 
-  .list-group-item:hover {
-    color: #28a745;
-  }
+.list-group-item:hover {
+  color: #28a745;
+}
+
+.drop-area {
+  background-color: #DCF1E4;
+  height: 400px;
+  width: 400px;
+  padding: 10px;
+  border: 5px dashed green;
+  border-radius: 20px;
+}
+
+.drag-over {
+  background-color: #254636;
+  border: 8px dashed #42a785;
+  transition: all 0.5s ease-in-out;
+}
+
+.dragging {
+  opacity: 0.5;
+  /* Dim the item being dragged */
+  transform: scale(1.05);
+  /* Slightly enlarge */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: lime;
+}

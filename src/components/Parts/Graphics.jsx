@@ -117,15 +117,13 @@ const Graphics = () => {
             </div>
 
 
-            <div onDragOver={(e) => onDragOver(e)} onDrop={(e) => onDrop(e, 'selectedItem')} style={{ backgroundColor: "#DCF1E4", height: "400px", width: "400px", padding: '10px', border: "5px dashed green", borderRadius: "20px" }}>
-
+            <div onDragOver={(e) => onDragOver(e)} onDrop={(e) => onDrop(e, 'selectedItem')} onDragLeave={ (e)=> {e.currentTarget.classList.remove("drag-over")}} className='drop-area'>
               <List />
-
             </div>
           </div>
         </div>
 
-        <div onDragOver={(e) => onDragOver(e)} className='container d-flex flex-wrap gap-3 align-items-center justify-content-center'>
+        <div className='container d-flex flex-wrap gap-3 align-items-center justify-content-center'>
           {gpus.map((gpu) => { return <GraphicsCard gpu={gpu} key={gpu.GPU_name} showGPU={showGPU} /> })}
         </div>
       </div>

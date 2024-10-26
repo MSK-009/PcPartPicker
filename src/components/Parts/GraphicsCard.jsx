@@ -8,7 +8,7 @@ const GraphicsCard = (props) => {
 
     return (
         <>
-            <div draggable={ !selectedItem.GPU ? "true": "false"} onDragStart={(e) => onDragStart(e, props.gpu, 'Graphics')} className="card border-0 me-lg-4 mb-lg-0 mb-4" onClick={()=>{props.showGPU( props.gpu )}} style={{width: "18rem", opacity: selectedItem.GPU?'0.6':'1'}}>
+            <div draggable={ !selectedItem.GPU ? "true": "false"} onDragStart={(e) => onDragStart(e, props.gpu, 'Graphics') } onDragEnd={ (e)=>{ e.currentTarget.classList.remove("dragging") } } className="card border-0 me-lg-4 mb-lg-0 mb-4" onClick={()=>{props.showGPU( props.gpu )}} style={{width: "18rem", opacity: selectedItem.GPU?'0.6':'1'}}>
                 <div className="backgroundEffect"></div>
                 <div className="pic">
                     <img className="" src={props.gpu.Image} draggable={false} alt="" />

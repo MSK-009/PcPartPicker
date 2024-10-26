@@ -7,10 +7,12 @@ const ListState = (props) => {
   const onDragStart = (e, item, listName) => {
     e.dataTransfer.setData('item', JSON.stringify(item));
     e.dataTransfer.setData('listName', listName);
+    e.currentTarget.classList.add("dragging");
   };
 
   const onDragOver = (e) => {
     e.preventDefault(); // This is required to allow a drop
+    e.currentTarget.classList.add("drag-over")
   };
 
 
@@ -24,6 +26,7 @@ const ListState = (props) => {
     else if (sourceListName === 'Graphics') {
       setSelectedItem({ ...selectedItem, GPU: data });
     }
+    e.currentTarget.classList.remove("drag-over")
   };
 
   const removeItem = (key) => {
