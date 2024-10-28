@@ -19,7 +19,7 @@
 .drag-over {
   background-color: #254636;
   border: 8px dashed #42a785;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.35s ease-in;
 }
 
 .dragging {
