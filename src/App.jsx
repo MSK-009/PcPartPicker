@@ -18,6 +18,8 @@ import Graphics from './components/Parts/Graphics';
 import ListState from './context/list/ListState';
 import ProcessorState from './context/processors/ProcessorState';
 import GPUState from './context/gpu/GPUState';
+import PSUState from './context/psus/PSUState';
+import Power from './components/Parts/Power';
 
 function App() {
   const [showWindow, setShowWindow] = useState(false);
@@ -47,20 +49,22 @@ function App() {
       <ListState>
         <ProcessorState>
           <GPUState>
-            <Window showWindow={showWindow} windowContent={windowContent} closeWindow={closeWindow} />
-            <BrowserRouter>
-              <Navbar openWindow={openWindow} updateContent={updateContent} />
-              <div>
-                <Routes>
-                  <Route exact path="/" element={<Home openWindow={openWindow} updateContent={updateContent} />} />
-                  <Route exact path="/about" element={<Contact />} />
-                  <Route exact path="/processors" element={<Processors />} />
-                  <Route exact path="/gpu" element={<Graphics />} />
-
-                </Routes>
-              </div>
-              <Footer />
-            </BrowserRouter>
+            <PSUState>
+              <Window showWindow={showWindow} windowContent={windowContent} closeWindow={closeWindow} />
+              <BrowserRouter>
+                <Navbar openWindow={openWindow} updateContent={updateContent} />
+                <div>
+                  <Routes>
+                    <Route exact path="/" element={<Home openWindow={openWindow} updateContent={updateContent} />} />
+                    <Route exact path="/about" element={<Contact />} />
+                    <Route exact path="/processors" element={<Processors />} />
+                    <Route exact path="/gpu" element={<Graphics />} />
+                    <Route exact path="/psu" element={<Power />} />
+                  </Routes>
+                </div>
+                <Footer />
+              </BrowserRouter>
+            </PSUState>
           </GPUState>
         </ProcessorState>
       </ListState>
