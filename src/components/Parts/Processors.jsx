@@ -3,7 +3,7 @@ import Card from './Card'
 import ListContext from '../../context/list/ListContext'
 import ProcessorContext from '../../context/processors/ProcessorContext'
 import List from '../List'
-
+import Search from '../Search';
 
 const Processors = () => {
 
@@ -103,43 +103,47 @@ const Processors = () => {
         </div>
       </div>
 
-      <div className='d-flex flex-column flex-sm-row my-5'>
-        {/* For screen sizes below 576px */}
-        <button className="btn btn-primary d-sm-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Filter
-        </button>
-        <div>
-          <div className="collapse d-sm-none" id="collapseExample">
-            <div className="input-group">
-              <input type="search" className="form-control" id="searchWithIcon" placeholder="Search.." aria-label="Search" aria-describedby="searchIcon" />
-              <button className="btn btn-success" id="searchIcon">
-                <i className="bi bi-search"></i>
-              </button>
-            </div>
+      <div className="d-flex flex-column flex-sm-row my-5">
+        <div className="col-">
+          <button
+            className="btn btn-success w-100 h-0 mb-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            Filter
+          </button>
 
-          </div>
-
-          {/* For all sizes above 576px */}
-          <div className="d-none d-sm-block">
-            <div className="mb-3">
-              <div className="input-group">
-                <input type="search" className="form-control" id="searchWithIcon" placeholder="Search..." aria-label="Search" aria-describedby="searchIcon" />
-                <button className="btn btn-success" id="searchIcon">
-                  <i className="bi bi-search"></i>
-                </button>
+          <div>
+            <div className="collapse" id="collapseExample">
+              <div>
+                <Search />
               </div>
             </div>
+          </div>
 
-            <div onDragOver={(e) => onDragOver(e)} onDrop={(e) => onDrop(e, 'selectedItem')} onDragLeave={ (e)=>{ e.currentTarget.classList.remove('drag-over') } } className='drop-area'>
-              <List />
-            </div>
+          <div
+            onDragOver={(e) => onDragOver(e)}
+            onDrop={(e) => onDrop(e, 'selectedItem')}
+            onDragLeave={(e) => {
+              e.currentTarget.classList.remove('drag-over');
+            }}
+            className="drop-area d-none d-sm-block"
+          >
+            <List />
           </div>
         </div>
 
-        <div className='container d-flex flex-wrap gap-3 align-items-center justify-content-center'>
-          {processors.map((processor) => { return <Card processor={processor} key={processor.CPU_name} showProcessor={showProcessor} /> })}
+        <div className="container d-flex flex-wrap gap-3 align-items-center justify-content-center">
+          {processors.map((processor) => (
+            <Card processor={processor} key={processor.CPU_name} showProcessor={showProcessor} />
+          ))}
         </div>
       </div>
+
+
 
 
     </>

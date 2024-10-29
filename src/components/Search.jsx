@@ -71,9 +71,9 @@ const Search = () => {
 
   return (
     <div>
-      <form className="d-flex" role="search">
+      <form className="d-flex mb-2" role="search">
         <input
-          className="form-control me-2"
+          className="form-control flex-grow-1 me-2"
           type="search"
           placeholder="Search"
           aria-label="Search"
