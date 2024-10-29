@@ -28,3 +28,13 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background-color: lime;
 }
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 0px;
+  width: 0px;
+  transition: all 0.2s ease-in;
+  overflow: hidden;
+}

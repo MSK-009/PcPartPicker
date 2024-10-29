@@ -39,6 +39,16 @@ const List = (props) => {
       </div>}
 
 
+      {/* PSU */}
+      {selectedItem.PSU && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
+        <i className="bi bi-plug-fill"></i>
+        PSU: {selectedItem.PSU.PSU_name}
+        <button style={{ cursor: 'pointer', border: 'none', background: "none", color: "white" }} onClick={() => { removeItem("PSU") }}>
+          <i className="fa-solid fa-xmark"></i>
+        </button>
+      </div>}
+
+
       {/* Case */}
       {selectedItem.Case && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
         <i className="bi bi-motherboard"></i>

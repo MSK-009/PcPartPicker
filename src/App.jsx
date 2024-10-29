@@ -21,6 +21,7 @@ import GPUState from './context/gpu/GPUState';
 import PSUState from './context/psus/PSUState';
 import Power from './components/Parts/Power';
 
+
 function App() {
   const [showWindow, setShowWindow] = useState(false);
   const [windowContent, setWindowContent] = useState('');

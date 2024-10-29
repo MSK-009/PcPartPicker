@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import ListContext from "./ListContext";
 
 const ListState = (props) => {
@@ -40,6 +40,9 @@ const ListState = (props) => {
     }
     else if (sourceListName === 'Graphics') {
       setSelectedItem({ ...selectedItem, GPU: data });
+    }
+    else if (sourceListName === 'Power') {
+      setSelectedItem({ ...selectedItem, PSU: data });
     }
     e.currentTarget.classList.remove("drag-over")
   };

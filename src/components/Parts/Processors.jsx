@@ -142,10 +142,6 @@ const Processors = () => {
           ))}
         </div>
       </div>
-
-
-
-
     </>
   )
 }
