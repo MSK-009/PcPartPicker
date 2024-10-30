@@ -27,7 +27,7 @@ const RAMCard = (props) => {
                     <p className="text-muted mt-3">Latency: {props.ram.Latency}</p>
                     <div className="d-flex align-items-center justify-content-between mt-3 pb-3">
                         <button disabled={selectedItem.RAM ? true : false} className="btn btn-primary" onClick={() => { setSelectedItem({ ...selectedItem, RAM: props.ram }) }}>Add<span className="fas fa-arrow-right"></span></button>
-                        <div className="d-flex align-items-center justify-content-center foot"> <p className="price">{props.ram.Price}</p>
+                        <div className="d-flex align-items-center justify-content-center foot"> <p className="price">CDN {props.ram.Price}</p>
                             <p className="ps-3 icon text-muted"><span className="fas fa-comment-alt pe-1"></span>7</p>
                         </div>
                     </div>

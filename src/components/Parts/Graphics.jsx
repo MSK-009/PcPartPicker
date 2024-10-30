@@ -84,7 +84,7 @@ const Graphics = () => {
               <p>Memory: {gpu.VRAM}</p>
               <p>Power Consuption: {gpu.TDP}</p>
               <p>Released: {gpu.Released}</p>
-              <p>Price: ${gpu.Price}</p>
+              <p>Price: CDN$ {gpu.Price.slice(0, -4)}</p>
             </div>
             <div className="modal-footer">
               <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>

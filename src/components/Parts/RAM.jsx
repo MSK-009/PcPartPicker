@@ -25,15 +25,15 @@ const Graphics = () => {
   var nosPages = Math.ceil(totalResults / pageSize)
 
   const [ram, setRAM] = useState({
-    image:"",
-    RAM_name: "",
-    Series: "",
-    TDP: "",
-    VRAM: "",
+    image: "",
+    RAM_name:"",
+    Latency: "",
+    MC: "",
+    SC: "",
     Released: "",
     Price: "",
-    Manufacturer: ""
   })
+  
 
   useEffect(() => {
     setProgress(25)
@@ -50,14 +50,14 @@ const Graphics = () => {
     setRAM({
       image: currentRAM.Image,
       RAM_name: currentRAM.RAM_name,
-      Series: currentRAM.Series,
-      TDP: currentRAM.TDP,
-      VRAM: currentRAM.VRAM,
+      Latency: currentRAM.Latency,
+      MC: currentRAM.Multicore_RW,
+      SC: currentRAM.Singlecore_RW,
       Released: currentRAM.Released,
       Price: currentRAM.Price,
-      Manufacturer: currentRAM.Manufacturer
     })
   }
+  
 
   const handleRemoveItem = ()=>{
     const { ["RAM"]: _, ...updatedSelected } = selectedItem;
@@ -80,11 +80,11 @@ const Graphics = () => {
             </div>
             <img src={ram.image} className='img-fluid'></img>
             <div className="modal-body">
-              <p>Codename: {ram.Series}</p>
-              <p>Memory: {ram.VRAM}</p>
-              <p>Power Consuption: {ram.TDP}</p>
+              <p>Latency: {ram.Latency}</p>
+              <p>Avg Multicore RW: {ram.MC}</p>
+              <p>Avg SingleCore RW: {ram.SC}</p>
               <p>Released: {ram.Released}</p>
-              <p>Price: ${ram.Price}</p>
+              <p>Price: CDN {ram.Price}</p>
             </div>
             <div className="modal-footer">
               <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>

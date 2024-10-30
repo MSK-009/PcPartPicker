@@ -26,7 +26,7 @@ const GraphicsCard = (props) => {
                     <p className="text-muted mt-3">Wattage: {props.gpu.TDP}</p>
                     <div className="d-flex align-items-center justify-content-between mt-3 pb-3">
                         <button disabled={selectedItem.GPU ? true : false} className="btn btn-primary" onClick={() => { setSelectedItem({ ...selectedItem, GPU: props.gpu }) }}>Add<span className="fas fa-arrow-right"></span></button>
-                        <div className="d-flex align-items-center justify-content-center foot"> <p className="price">{props.gpu.Price}</p>
+                        <div className="d-flex align-items-center justify-content-center foot"> <p className="price">CDN$ {props.gpu.Price.slice(0, -4)}</p>
                             <p className="ps-3 icon text-muted"><span className="fas fa-comment-alt pe-1"></span>7</p>
                         </div>
                     </div>
