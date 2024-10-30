@@ -8,11 +8,12 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "both": "concurrently \"npm run dev\"  \"npm --prefix ../backend run serve\""
+    "both": "concurrently \"npm run dev\"  \"npm --prefix ../PcPartPicker-Backend run serve\""
   },
   "dependencies": {
     "@react-three/drei": "^9.114.6",
     "@react-three/fiber": "^8.17.10",
+    "concurrently": "^9.0.1",
     "react": "^18.3.1",
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.3.1",
