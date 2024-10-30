@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react"
-import GPUContext from "./GPUContext";
+import RAMContext from "./RAMContext";
 
-const GPUState = (props) => {
+const RAMState = (props) => {
 
-  const [gpus, setGPUs] = useState( [] )
+  const [rams, setRAMs] = useState( [] )
   const host = 'http://localhost:5000'
   const [totalResults, setTotalResults] = useState(null)
 
-  const getGPUs = async (pageSize, page, searchTerm, sort) => {
-    const response = await fetch(`${host}/api/gpu/getgpu/${page}`, {
+  const getRAMs = async (pageSize, page, searchTerm, sort) => {
+    const response = await fetch(`${host}/api/ram/getram/${page}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -18,18 +18,18 @@ const GPUState = (props) => {
 
     });
     const json = await response.json()
-    setGPUs(json.result)
+    setRAMs(json.result)
     setTotalResults(json.totalLength)
   }  
 
   return (
-    <GPUContext.Provider value={{ gpus, getGPUs, totalResults }}>
+    <RAMContext.Provider value={{ rams, getRAMs, totalResults }}>
       { props.children };
-    </GPUContext.Provider>
+    </RAMContext.Provider>
   )
 }
 
-export default GPUState;
+export default RAMState;
 
 
 

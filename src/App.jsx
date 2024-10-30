@@ -13,12 +13,14 @@ import Window from './components/Window';
 import Contact from './pages/Contact';
 import Processors from './components/Parts/Processors';
 import Graphics from './components/Parts/Graphics';
+import RAM from './components/Parts/RAM';
 
 
 import ListState from './context/list/ListState';
 import ProcessorState from './context/processors/ProcessorState';
 import GPUState from './context/gpu/GPUState';
 import PSUState from './context/psus/PSUState';
+import RAMState from './context/ram/RAMState';
 import Power from './components/Parts/Power';
 
 
@@ -51,7 +53,8 @@ function App() {
         <ProcessorState>
           <GPUState>
             <PSUState>
-              <Window showWindow={showWindow} windowContent={windowContent} closeWindow={closeWindow} />
+              <RAMState>
+              {/* <Window showWindow={showWindow} windowContent={windowContent} closeWindow={closeWindow} /> */}
               <BrowserRouter>
                 <Navbar openWindow={openWindow} updateContent={updateContent} />
                 <div>
@@ -61,10 +64,12 @@ function App() {
                     <Route exact path="/processors" element={<Processors />} />
                     <Route exact path="/gpu" element={<Graphics />} />
                     <Route exact path="/psu" element={<Power />} />
+                    <Route exact path="/memory" element={<RAM />} />
                   </Routes>
                 </div>
                 <Footer />
               </BrowserRouter>
+              </RAMState>
             </PSUState>
           </GPUState>
         </ProcessorState>

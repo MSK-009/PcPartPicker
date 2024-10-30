@@ -9,7 +9,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const Navbar = ({openWindow, updateContent}) => {
     return (
         <div style={{zIndex:'0'}}>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-black sticky-top bg-opacity-75" style={{borderBottom:"2px solid green", WebkitBackdropFilter: 'blur(5px)', backdropFilter: 'blur(5px)', zIndex:'10'}}>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top bg-opacity-75" style={{borderBottom:"2px solid green", WebkitBackdropFilter: 'blur(5px)', backdropFilter: 'blur(5px)', zIndex:'10'}}>
             <div className="container-fluid">
                 <Link className="navbar-brand" href="/"><img style={{marginLeft: "30px",height: "40px"}} src={logo} /></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
