@@ -1,19 +1,19 @@
 import React, { useState, useRef, useContext, useEffect } from 'react'
-import RAMCard from './RAMCard'
+import SSDCard from './SSDCard'
 import ListContext from '../../context/list/ListContext'
-import RAMContext from '../../context/ram/RAMContext'
+import SSDContext from '../../context/ssd/SSDContext'
 import List from '../List'
 import Search from '../Search';
 import LoadingBar from 'react-top-loading-bar'
 import BackToTop from '../BackToTop'
 
 
-const RAM = () => {
+const SSD = () => {
 
 
-  const ramContext = useContext(RAMContext)
+  const ssdContext = useContext(SSDContext)
 
-  const { rams, getRAMs, totalResults } = ramContext
+  const { ssds, getSSDs, totalResults } = ssdContext
   
   const listContext = useContext(ListContext)
   const { selectedItem, onDragOver, onDrop, setSelectedItem } = listContext
@@ -26,12 +26,12 @@ const RAM = () => {
 
   var nosPages = Math.ceil(totalResults / pageSize)
 
-  const [ram, setRAM] = useState({
-    image: "",
-    RAM_name:"",
-    Latency: "",
-    MC: "",
-    SC: "",
+  const [ssd, setSSD] = useState({
+    Image: "",
+    SSD_name:"",
+    Format: "",
+    Protocol: "",
+    Capacity: "",
     Released: "",
     Price: "",
   })
@@ -39,7 +39,7 @@ const RAM = () => {
 
   useEffect(() => {
     setProgress(25)
-    getRAMs(pageSize, page, searchTerm, sort)
+    getSSDs(pageSize, page, searchTerm, sort)
     setProgress(100)
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }, [page, pageSize, searchTerm, sort])
@@ -47,22 +47,22 @@ const RAM = () => {
   const ref = useRef(null)
   const refClose = useRef(null)
 
-  const showRAM = (currentRAM) => {
+  const showSSD = (currentSSD) => {
     ref.current.click()
-    setRAM({
-      image: currentRAM.Image,
-      RAM_name: currentRAM.RAM_name,
-      Latency: currentRAM.Latency,
-      MC: currentRAM.Multicore_RW,
-      SC: currentRAM.Singlecore_RW,
-      Released: currentRAM.Released,
-      Price: currentRAM.Price,
+    setSSD({
+        Image: currentSSD.Image,
+        SSD_name: currentSSD.SSD_name,
+        Format: currentSSD.Format,
+        Protocol: currentSSD.Protocol,
+        Capacity: currentSSD.Capacity,
+        Released: currentSSD.Released,
+        Price: currentSSD.Price
     })
   }
   
 
   const handleRemoveItem = ()=>{
-    const { ["RAM"]: _, ...updatedSelected } = selectedItem;
+    const { ["SSD"]: _, ...updatedSelected } = selectedItem;
     setSelectedItem(updatedSelected);
   }
 
@@ -77,22 +77,22 @@ const RAM = () => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">{ram.RAM_name}</h1>
+              <h1 className="modal-title fs-5" id="exampleModalLabel">{ssd.SSD_name}</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <img src={ram.image} className='img-fluid'></img>
+            <img src={ssd.Image} className='img-fluid'></img>
             <div className="modal-body">
-              <p>Latency: {ram.Latency}</p>
-              <p>Avg Multicore RW: {ram.MC}</p>
-              <p>Avg SingleCore RW: {ram.SC}</p>
-              <p>Released: {ram.Released}</p>
-              <p>Price: CDN {ram.Price}</p>
+              <p>Format: {ssd.Format}</p>
+              <p>Protocol: {ssd.Protocol}</p>
+              <p>Capacity: {ssd.Capacity}</p>
+              <p>Released: {ssd.Released}</p>
+              <p>Price: {ssd.Price}</p>
             </div>
             <div className="modal-footer">
               <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button 
                 type="button" 
-                disabled={ selectedItem.RAM && selectedItem.RAM.RAM_name === ram.RAM_name ? false : true }
+                disabled={ selectedItem.SSD && selectedItem.SSD.SSD_name === ssd.SSD_name ? false : true }
                 onClick={handleRemoveItem}
                 className="btn btn-danger">
                   Remove from your parts
@@ -117,8 +117,8 @@ const RAM = () => {
                         <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "asc" }) }}>Price: Ascending</button></li>
                         <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "desc" }) }}>Price: Descending</button></li>
                         <li><hr className="dropdown-divider text-primary" /></li>
-                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "RAM_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
-                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "RAM_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
+                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "SSD_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
+                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "SSD_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
                     </ul>
                 </div>
             </div>
@@ -139,7 +139,7 @@ const RAM = () => {
           <div>
             <div className="collapse" id="collapseExample">
               <div>
-                <Search search={searchTerm} setSearchTerm={setSearchTerm} name="RAM_Search" setPage={setPage} />
+                <Search search={searchTerm} setSearchTerm={setSearchTerm} name="SSD_Search" setPage={setPage} />
               </div>
             </div>
           </div>
@@ -157,8 +157,8 @@ const RAM = () => {
           </div>
         </div>
         <div className='container d-flex flex-wrap gap-3 align-items-center justify-content-center'>
-        {rams.map((ram) => (
-            <RAMCard ram={ram} key={ram._id} showRAM={showRAM} />
+        {ssds.map((ssd) => (
+            <SSDCard ssd={ssd} key={ssd._id} showSSD={showSSD} />
         ))}
         </div>
       </div>
@@ -190,4 +190,4 @@ const RAM = () => {
   )
 }
 
-export default RAM
+export default SSD

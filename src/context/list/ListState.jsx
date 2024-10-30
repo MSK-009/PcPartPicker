@@ -44,9 +44,14 @@ const ListState = (props) => {
     else if (sourceListName === 'RAM') {
       setSelectedItem({ ...selectedItem, RAM: data });
     }
+    else if (sourceListName === 'SSD') {
+      setSelectedItem({ ...selectedItem, SSD: data });
+    }
+
     else if (sourceListName === 'Power') {
       setSelectedItem({ ...selectedItem, PSU: data });
     }
+
     e.currentTarget.classList.remove("drag-over")
   };
 
