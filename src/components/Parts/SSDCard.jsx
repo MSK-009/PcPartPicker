@@ -22,6 +22,9 @@ const SSDCard = (props) => {
                 <div className="backgroundEffect"></div>
                 <div className="pic">
                     <img className="img-thumbnail" src={props.ssd.Image} draggable={false} alt="" style={{objectFit: "contain"}}/>
+                    <div className="date bg-success"> <span className="day">{props.ssd.Released.split(" ")[0]}</span>
+                        <span className="month">{props.ssd.Released.split(" ")[1]}</span> <span className="year">{props.ssd.Released.split(" ")[2]}</span>
+                    </div>
                 </div>
                 <div className="content" onClick={(e) => { e.stopPropagation() }}> <p className="h-1 mt-4">{props.ssd.SSD_name}</p>
                     <p className="text-muted mt-3">Capacity: {props.ssd.Capacity}</p>

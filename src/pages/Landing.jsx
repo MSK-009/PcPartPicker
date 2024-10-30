@@ -70,7 +70,7 @@ const Home = ({openWindow, updateContent}) => {
 
       {/* Parts */}
 
-      <div className='d-flex gap-5 my-5 flex-wrap justify-content-center'>
+      <div className='d-flex gap-5 my-5 flex-wrap justify-content-center container'>
 
       <div className="card bg-success-subtle" style={{width: "18rem"}}>
           <img src="./assets/cpu.webp" className="card-img-top h-50" alt="..." />

@@ -21,6 +21,9 @@ const GraphicsCard = (props) => {
                 <div className="backgroundEffect"></div>
                 <div className="pic">
                     <img className="img-thumbnail" src={props.gpu.Image} draggable={false} alt="" style={{objectFit: "contain"}}/>
+                    <div className="date bg-success"> <span className="day">{props.gpu.Released.split(" ")[0]}</span>
+                        <span className="month">{props.gpu.Released.split(" ")[1]}</span> <span className="year">{props.gpu.Released.split(" ")[2]}</span>
+                    </div>
                 </div>
                 <div className="content" onClick={(e) => { e.stopPropagation() }}> <p className="h-1 mt-4">{props.gpu.GPU_name}</p>
                     <p className="text-muted mt-3">Wattage: {props.gpu.TDP}</p>
