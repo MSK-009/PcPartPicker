@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext, useEffect } from 'react'
-import GraphicsCard from './GraphicsCard.jsx'
+import RAMCard from './RAMCard'
 import ListContext from '../../context/list/ListContext'
-import GPUContext from '../../context/gpu/GPUContext'
+import RAMContext from '../../context/ram/RAMContext'
 import List from '../List'
 import Search from '../Search';
 import LoadingBar from 'react-top-loading-bar'
@@ -9,9 +9,9 @@ import BackToTop from '../BackToTop'
 const Graphics = () => {
 
 
-  const gpuContext = useContext(GPUContext)
+  const ramContext = useContext(RAMContext)
 
-  const { gpus, getGPUs, totalResults } = gpuContext
+  const { rams, getRAMs, totalResults } = ramContext
   
   const listContext = useContext(ListContext)
   const { selectedItem, onDragOver, onDrop, setSelectedItem } = listContext
@@ -24,9 +24,9 @@ const Graphics = () => {
 
   var nosPages = Math.ceil(totalResults / pageSize)
 
-  const [gpu, setGPU] = useState({
+  const [ram, setRAM] = useState({
     image:"",
-    GPU_name: "",
+    RAM_name: "",
     Series: "",
     TDP: "",
     VRAM: "",
@@ -37,7 +37,7 @@ const Graphics = () => {
 
   useEffect(() => {
     setProgress(25)
-    getGPUs(pageSize, page, searchTerm, sort)
+    getRAMs(pageSize, page, searchTerm, sort)
     setProgress(100)
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }, [page, pageSize, searchTerm, sort])
@@ -45,22 +45,22 @@ const Graphics = () => {
   const ref = useRef(null)
   const refClose = useRef(null)
 
-  const showGPU = (currentGPU) => {
+  const showRAM = (currentRAM) => {
     ref.current.click()
-    setGPU({
-      image: currentGPU.Image,
-      GPU_name: currentGPU.GPU_name,
-      Series: currentGPU.Series,
-      TDP: currentGPU.TDP,
-      VRAM: currentGPU.VRAM,
-      Released: currentGPU.Released,
-      Price: currentGPU.Price,
-      Manufacturer: currentGPU.Manufacturer
+    setRAM({
+      image: currentRAM.Image,
+      RAM_name: currentRAM.RAM_name,
+      Series: currentRAM.Series,
+      TDP: currentRAM.TDP,
+      VRAM: currentRAM.VRAM,
+      Released: currentRAM.Released,
+      Price: currentRAM.Price,
+      Manufacturer: currentRAM.Manufacturer
     })
   }
 
   const handleRemoveItem = ()=>{
-    const { ["GPU"]: _, ...updatedSelected } = selectedItem;
+    const { ["RAM"]: _, ...updatedSelected } = selectedItem;
     setSelectedItem(updatedSelected);
   }
 
@@ -75,22 +75,22 @@ const Graphics = () => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">{gpu.GPU_name}</h1>
+              <h1 className="modal-title fs-5" id="exampleModalLabel">{ram.RAM_name}</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <img src={gpu.image} className='img-fluid'></img>
+            <img src={ram.image} className='img-fluid'></img>
             <div className="modal-body">
-              <p>Codename: {gpu.Series}</p>
-              <p>Memory: {gpu.VRAM}</p>
-              <p>Power Consuption: {gpu.TDP}</p>
-              <p>Released: {gpu.Released}</p>
-              <p>Price: ${gpu.Price}</p>
+              <p>Codename: {ram.Series}</p>
+              <p>Memory: {ram.VRAM}</p>
+              <p>Power Consuption: {ram.TDP}</p>
+              <p>Released: {ram.Released}</p>
+              <p>Price: ${ram.Price}</p>
             </div>
             <div className="modal-footer">
               <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button 
                 type="button" 
-                disabled={ selectedItem.GPU && selectedItem.GPU.GPU_name === gpu.GPU_name ? false : true }
+                disabled={ selectedItem.RAM && selectedItem.RAM.RAM_name === ram.RAM_name ? false : true }
                 onClick={handleRemoveItem}
                 className="btn btn-danger">
                   Remove from your parts
@@ -115,8 +115,8 @@ const Graphics = () => {
                         <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "asc" }) }}>Price: Ascending</button></li>
                         <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "desc" }) }}>Price: Descending</button></li>
                         <li><hr className="dropdown-divider text-primary" /></li>
-                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "GPU_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
-                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "GPU_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
+                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "RAM_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
+                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "RAM_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
                     </ul>
                 </div>
             </div>
@@ -137,7 +137,7 @@ const Graphics = () => {
           <div>
             <div className="collapse" id="collapseExample">
               <div>
-                <Search search={searchTerm} setSearchTerm={setSearchTerm} name="GPU_Search" setPage={setPage} />
+                <Search search={searchTerm} setSearchTerm={setSearchTerm} name="RAM_Search" setPage={setPage} />
               </div>
             </div>
           </div>
@@ -155,8 +155,8 @@ const Graphics = () => {
           </div>
         </div>
         <div className='container d-flex flex-wrap gap-3 align-items-center justify-content-center'>
-        {gpus.map((gpu) => (
-            <GraphicsCard gpu={gpu} key={gpu._id} showGPU={showGPU} />
+        {rams.map((ram) => (
+            <RAMCard ram={ram} key={ram._id} showRAM={showRAM} />
         ))}
         </div>
       </div>
