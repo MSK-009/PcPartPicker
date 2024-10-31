@@ -6,8 +6,11 @@ import List from '../List'
 import Search from '../Search';
 import LoadingBar from 'react-top-loading-bar'
 import BackToTop from '../BackToTop'
+import { useLocation } from 'react-router-dom'
+
 const Graphics = () => {
 
+  let location = useLocation()
 
   const gpuContext = useContext(GPUContext)
 
@@ -21,6 +24,7 @@ const Graphics = () => {
   const [pageSize, setPageSize] = useState(12)
   const [sort, setSort] = useState({})
   const [progress, setProgress] = useState(0)
+  const [ loading, setLoading ] = useState(false)
 
   var nosPages = Math.ceil(totalResults / pageSize)
 
@@ -37,7 +41,11 @@ const Graphics = () => {
 
   useEffect(() => {
     setProgress(25)
+    setLoading(true)
+    setProgress(50)
     getGPUs(pageSize, page, searchTerm, sort)
+    setProgress(75)
+    setLoading(false)
     setProgress(100)
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }, [page, pageSize, searchTerm, sort])
@@ -78,7 +86,7 @@ const Graphics = () => {
               <h1 className="modal-title fs-5" id="exampleModalLabel">{gpu.GPU_name}</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <img src={gpu.image} className='img-fluid'></img>
+            <img draggable={false} src={gpu.image} className='img-fluid'></img>
             <div className="modal-body">
               <p>Codename: {gpu.Series}</p>
               <p>Memory: {gpu.VRAM}</p>
@@ -155,6 +163,7 @@ const Graphics = () => {
           </div>
         </div>
         <div className='container d-flex flex-wrap gap-3 align-items-center justify-content-center'>
+        {loading && <InfinitySpin visible={true} width="200" color="#4fa94d" ariaLabel="infinity-spin-loading"/>}
         {gpus.map((gpu) => (
             <GraphicsCard gpu={gpu} key={gpu._id} showGPU={showGPU} />
         ))}

@@ -80,7 +80,7 @@ const SSD = () => {
               <h1 className="modal-title fs-5" id="exampleModalLabel">{ssd.SSD_name}</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <img src={ssd.Image} className='img-fluid'></img>
+            <img draggable={false} src={ssd.Image} className='img-fluid'></img>
             <div className="modal-body">
               <p>Format: {ssd.Format}</p>
               <p>Protocol: {ssd.Protocol}</p>

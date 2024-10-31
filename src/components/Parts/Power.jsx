@@ -74,7 +74,7 @@ const Power = () => {
                             <h1 className="modal-title fs-5" id="exampleModalLabel">{psu.name}</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <img src={psu.image} className='img-fluid'></img>
+                        <img draggable={false} src={psu.image} className='img-fluid'></img>
                         <div className="modal-body">
                             <p>Size: {psu.size}</p>
                             <p>Wattage: {psu.wattage}</p>

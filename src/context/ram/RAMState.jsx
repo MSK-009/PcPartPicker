@@ -18,7 +18,6 @@ const RAMState = (props) => {
 
     });
     const json = await response.json()
-    console.log(json.result);
     setRAMs(json.result)
 
     setTotalResults(json.totalLength)
