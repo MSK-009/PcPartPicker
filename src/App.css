@@ -41,12 +41,19 @@
 
 .hover-button-deselect {
   cursor: pointer;
-  border: none;
+  border: 1px solid white;
+  margin: 1px;
+  border-radius: 8px;
   background: none;
   color: white;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.1s;
 }
 
 .hover-button-deselect:hover {
-  color: red;
+  color: #ee204d;
+  margin: 2px;
+  transform: scale(1.5);
+  border: 0px;
+  -webkit-filter: drop-shadow( 0px 0px 4px rgba(244, 194, 194, 1));
+  filter: drop-shadow( 0px 0px 4px rgba(244, 194, 194, 1));
 }
