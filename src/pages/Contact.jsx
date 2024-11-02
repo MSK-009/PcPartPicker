@@ -8,49 +8,49 @@ const itemsData = [
       name: 'Muhammad Hamza',
       location: 'SE-22092',
       imgSrc: 'https://media.licdn.com/dms/image/v2/D4D03AQEXCJtadzsnww/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729017534122?e=1735171200&v=beta&t=q9pN4afFDQUOO3Jz8834cJl1YuwdIxjy1TS1tHEVhwM',
-      text: 'Proin massa eros, quis fringilla sagittis. Euismod scelerisque varius sed nec consequat, turpis.'
+      text: "At PcPartPicker, we believe that everyone should have the opportunity to create their perfect computer. Our platform simplifies the process, We can't wait to see the amazing builds you create!"
     },
     {
       id: 2,
       name: 'Muhammad Shahzeb Khan',
       location: 'SE-22070',
       imgSrc: 'https://media.licdn.com/dms/image/v2/D4D03AQFgW_8C6XN6QQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1681092436522?e=1735171200&v=beta&t=r-4_BrGF7ItZlBnyu2dd7zCxEvvPKV23oWmA1Kv1E7Y',
-      text: 'Proin massa eros, quis fringilla sagittis. Euismod scelerisque varius sed nec consequat, turpis.'
+      text: "Building a PC is more than just assembling parts—it's about creating a machine that reflects your unique needs and passions. Our community is here to support you every step of the way"
     },
     {
       id: 3,
       name: 'Ali Ahmed Shaikh',
       location: 'SE-22089',
       imgSrc: 'https://media.licdn.com/dms/image/v2/D4D03AQEGnNRh34kiWQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727108125468?e=1735171200&v=beta&t=ke0H1A6XqS71waVWHsnOLhYG8VjVqTjghigsCMYf3i0',
-      text: 'Proin massa eros, quis fringilla sagittis. Euismod scelerisque varius sed nec consequat, turpis.'
+      text: 'When I first built my own PC, it was a game-changer. I wanted to create a platform that empowers others to experience that same thrill. With BuildMyPC, you have the tools, knowledge, and community at your fingertips to craft your dream machine. '
     },
     {
       id: 4,
       name: 'Umer Saleh',
       location: 'SE-22076',
       imgSrc: 'https://media.licdn.com/dms/image/v2/D4D03AQFPnNmPvkwncg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1680524087590?e=1735171200&v=beta&t=sGDuoRaQRgfeB3tgAvCV51MU66XYps1UoOiPSjRk0lE',
-      text: 'Proin massa eros, quis fringilla sagittis. Euismod scelerisque varius sed nec consequat, turpis.'
+      text: "Our mission is to demystify PC building for everyone. Whether you're looking to game, create, or just need a reliable workstation, our intuitive tools and comprehensive guides will ensure you have everything you need to succeed. "
     },
     {
         id: 5,
         name: 'Ahmed Baig',
         location: 'SE-22068',
         imgSrc: 'https://media.licdn.com/dms/image/v2/D4E03AQG_D8qr19YuTQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1723324851136?e=1735171200&v=beta&t=uwIqTgCm4oNCpdPKzumU_lhYcrGmJeZj_4zxvt4J7mc',
-        text: 'Proin massa eros, quis fringilla sagittis. Euismod scelerisque varius sed nec consequat, turpis.'
+        text: 'The community here is amazing! I got so much help and advice while building my first PC. I love being able to share my progress and get feedback from others. Thank you, PcPartPicker!'
     },
     {
         id: 6,
         name: 'Muhammad Huzaifa',
         location: 'SE-22080',
         imgSrc: 'https://media.licdn.com/dms/image/v2/D4D03AQG5DmW977xi9A/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1680607259673?e=1735171200&v=beta&t=yI3Mgl8qFsnwR93oN59fyIEn9PjX0Jj6y8T-1bsVJnY',
-        text: 'Proin massa eros, quis fringilla sagittis. Euismod scelerisque varius sed nec consequat, turpis.'
+        text: "Our goal is to make PC building accessible to everyone. Whether you're aiming to game, create, or require a dependable workstation, our user-friendly tools and thorough guides will provide you with everything you need to thrive."
     },
     {
         id: 7,
         name: 'Noor-ul-Talha',
         location: 'SE-22072',
         imgSrc: 'https://media.licdn.com/dms/image/v2/D4D03AQHxSIbK7iHzew/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1728845048687?e=1735171200&v=beta&t=xFV0ln8xeK-zm9-mGUO2pUIJv817f7psFZlVbdYpSNM',
-        text: 'Proin massa eros, quis fringilla sagittis. Euismod scelerisque varius sed nec consequat, turpis.'
+        text: 'We’ve poured our hearts into PcPartPicker to make it a welcoming space for all PC builders. '
     },
 
   ];
@@ -134,6 +134,8 @@ const Contact = () => {
                         <a aria-label="read more reviews" href="" class="cs-button-solid">Read More</a>
                         </div>
                     </section>
+            </div>
+            <div class="lines">
             </div>
         </>
     );

@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Typed from 'typed.js';
 import { Link } from 'react-router-dom'
-
-const Home = ({openWindow, updateContent}) => {
+import ScrollDown from '../components/ScrollDown';
+import Offer from '../components/Offer';
+const Home = () => {
   const el = useRef(null);
 
   useEffect(() => {
@@ -19,15 +20,21 @@ const Home = ({openWindow, updateContent}) => {
   return (
     <>
       {/* Hero */}
-      <section className="bg-black py-5">
+      <section className="bg-black py-5 bg-transparent">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-md-6">
-              <h1 className="display-4 fw-bold text-light">Welcome to <span style={{ color: "#915EFF" }} id="element" ref={el}></span></h1>
+            <div className="col-md-6 px-6 px-md-0">
+              <h1 className="heading-home">Welcome to <span style={{ color: "#2FA44D" }} id="element" ref={el}></span></h1>
               <p className="lead text-light">
-                Discover amazing features and great content right at your fingertips. Join us and explore a world of opportunities tailored just for you.
+                A place where you can build your own PC. That is truly yours.
+                <br />
+                <br />
+                Choose the components that suit your needs and create a custom build tailored to your 
+                  <span className='text-danger fw-bold'> gaming </span>, 
+                  <span className='text-info fw-bold'> productivity </span>, or 
+                  <span className='text-success fw-bold'> creative tasks</span>.
               </p>
-              <button className="btn btn-success btn-lg mt-3 text-light" onClick={() => { openWindow(); updateContent(); }}>Customize!</button>
+              <Link className="btn btn-success btn-lg mt-3 text-light" to="/processors">Make Your Own PC</Link>
             </div>
             <div className="col-md-6 text-center">
               <img src="./assets/pc.png" alt="Computer" className="img-fluid rounded" />
@@ -35,9 +42,11 @@ const Home = ({openWindow, updateContent}) => {
           </div>
         </div>
       </section>
-
+      <ScrollDown />
       {/* Carousel */}
-      <div id="carouselExampleIndicators" className="carousel slide container">
+      <div className="carousel-slide-container">
+        <div className='display-5 fw-bold text-white text-center'>Get <span className='text-danger'>25%</span> OFF on these PRE-BUILT PCs</div>
+      <div id="carouselExampleIndicators" className="carousel slide container" data-bs-ride="carousel" data-bs-interval="3000">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -67,74 +76,110 @@ const Home = ({openWindow, updateContent}) => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+      </div>
 
       {/* Parts */}
-
+      <div className='container my-5' id="parts">
       <div className='d-flex gap-5 my-5 flex-wrap justify-content-center'>
 
-      <div className="card bg-success-subtle" style={{width: "18rem"}}>
+      <div className="col-md-3 card bg-success-subtle" style={{width: "18rem"}}>
           <img src="./assets/cpu.webp" className="card-img-top h-50" alt="..." />
           <div className="card-body">
             <h5 className="card-title">Processor</h5>
             <p className="card-text">Build your ultimate gaming rig with top-tier processors for unbeatable performance!</p>
-            <Link to="/processors" className="btn btn-success">Go somewhere</Link>
+            <Link to="/processors" className="btn btn-success">
+            Get this part&nbsp;&nbsp;
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
+              </svg>
+            </Link>
           </div>
         </div>
 
-        <div className="card bg-success-subtle" style={{width: "18rem"}}>
+        <div className="col-md-3 card bg-success-subtle" style={{width: "18rem"}}>
           <img src="./assets/gpu.jpg" className="card-img-top h-50" alt="..." />
           <div className="card-body">
             <h5 className="card-title">Graphics Card</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/gpu" className="btn btn-success">Go somewhere</Link>
+            <Link to="/gpu" className="btn btn-success">
+              Get this part&nbsp;&nbsp;
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
+              </svg>
+            </Link>
           </div>
         </div>
 
-        <div className="card bg-success-subtle" style={{width: "18rem"}}>
+        <div className="col-md-3 card bg-success-subtle" style={{width: "18rem"}}>
           <img src="./assets/motherboard.webp" className="card-img-top h-50" alt="..." />
           <div className="card-body">
             <h5 className="card-title">Motherboard</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/motherboard" className="btn btn-success">Go somewhere</Link>
+            <Link to="/motherboard" className="btn btn-success">
+            Get this part&nbsp;&nbsp;
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
+              </svg>
+            </Link>
           </div>
         </div>
 
-        <div className="card bg-success-subtle" style={{width: "18rem"}}>
+        <div className="col-md-3 card bg-success-subtle" style={{width: "18rem"}}>
           <img src="./assets/ram.webp" className="card-img-top h-50" alt="..." />
           <div className="card-body">
             <h5 className="card-title">RAM</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/memory" className="btn btn-success">Go somewhere</Link>
+            <Link to="/memory" className="btn btn-success">
+            Get this part&nbsp;&nbsp;
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
+              </svg>
+            </Link>
           </div>
         </div>
 
-        <div className="card bg-success-subtle" style={{width: "18rem"}}>
+        <div className="col-md-3 card bg-success-subtle" style={{width: "18rem"}}>
           <img src="./assets/ssd.jpg" className="card-img-top h-50" alt="..." />
           <div className="card-body">
             <h5 className="card-title">Storage</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/storage" className="btn btn-success">Go somewhere</Link>
+            <Link to="/storage" className="btn btn-success">
+            Get this part&nbsp;&nbsp;
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
+              </svg>
+            </Link>
           </div>
         </div>
 
-        <div className="card bg-success-subtle" style={{width: "18rem"}}>
+        <div className="col-md-3 card bg-success-subtle" style={{width: "18rem"}}>
           <img src="./assets/case.jpg" className="card-img-top h-50" alt="..." />
           <div className="card-body">
             <h5 className="card-title">Case</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/cases" className="btn btn-success">Go somewhere</Link>
+            <Link to="/cases" className="btn btn-success">
+            Get this part&nbsp;&nbsp;
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
+              </svg>
+            </Link>
           </div>
         </div>
 
-        <div className="card bg-success-subtle" style={{width: "18rem"}}>
+        <div className="col-md-3 card bg-success-subtle" style={{width: "18rem"}}>
           <img src="./assets/psu.jpg" className="card-img-top h-50" alt="..." />
           <div className="card-body">
             <h5 className="card-title">PSU</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <Link to="/psu" className="btn btn-success">Go somewhere</Link>
+            <Link to="/psu" className="btn btn-success">
+            Get this part&nbsp;&nbsp;
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
+              </svg>
+            </Link>
           </div>
         </div>
-
+        </div>
 
 
 
