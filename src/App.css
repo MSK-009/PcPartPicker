@@ -14,12 +14,13 @@
   padding: 10px;
   border: 5px dashed green;
   border-radius: 20px;
+  transition: all 0.5s ease-in-out;
 }
 
 .drag-over {
   background-color: #254636;
-  border: 8px dashed #42a785;
-  transition: all 0.35s ease-in;
+  border: 5px dashed lime;
+  transition: all 0.5s ease-in-out;
 }
 
 .dragging {
@@ -27,6 +28,7 @@
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background-color: lime;
+  transition: all 0.5s ease-in-out;
 }
 
 #btn-back-to-top {

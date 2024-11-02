@@ -6,7 +6,7 @@ import List from '../List'
 import Search from '../Search';
 import LoadingBar from 'react-top-loading-bar'
 import BackToTop from '../BackToTop'
-const Graphics = () => {
+const RAM = () => {
 
 
   const ramContext = useContext(RAMContext)
@@ -188,4 +188,4 @@ const Graphics = () => {
   )
 }
 
-export default Graphics
+export default RAM;
