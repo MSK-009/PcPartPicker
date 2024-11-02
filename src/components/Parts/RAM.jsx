@@ -6,6 +6,7 @@ import List from '../List'
 import Search from '../Search';
 import LoadingBar from 'react-top-loading-bar'
 import BackToTop from '../BackToTop'
+
 const RAM = () => {
 
 
@@ -78,7 +79,7 @@ const RAM = () => {
               <h1 className="modal-title fs-5" id="exampleModalLabel">{ram.RAM_name}</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <img src={ram.image} className='img-fluid'></img>
+            <img draggable={false} src={ram.image} className='img-fluid'></img>
             <div className="modal-body">
               <p>Latency: {ram.Latency}</p>
               <p>Avg Multicore RW: {ram.MC}</p>
