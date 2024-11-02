@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <>
       {/* Hero */}
-      <section className="bg-black py-5 bg-transparent">
+      <section className="bg-black bg-transparent">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6 px-6 px-md-0">
@@ -34,7 +34,12 @@ const Home = () => {
                   <span className='text-info fw-bold'> productivity </span>, or 
                   <span className='text-success fw-bold'> creative tasks</span>.
               </p>
-              <Link className="btn btn-success btn-lg mt-3 text-light" to="/processors">Make Your Own PC</Link>
+              {/* <Link className="btn btn-success btn-lg mt-3 text-light" to="/processors">Make Your Own PC</Link> */}
+              <br />
+              <Link class="threed-getstarted-btn" to="/processors">
+                Make Your Own PC&nbsp;&nbsp;
+                <i class="bi bi-pc-display-horizontal"></i>
+              </Link>
             </div>
             <div className="col-md-6 text-center">
               <img src="./assets/pc.png" alt="Computer" className="img-fluid rounded" />
@@ -45,7 +50,7 @@ const Home = () => {
       <ScrollDown />
       {/* Carousel */}
       <div className="carousel-slide-container">
-        <div className='display-5 fw-bold text-white text-center'>Get <span className='text-danger'>25%</span> OFF on these PRE-BUILT PCs</div>
+        <div className='display-5 fw-bold text-white text-center'>Check out these PRE-BUILT PCs</div>
       <div id="carouselExampleIndicators" className="carousel slide container" data-bs-ride="carousel" data-bs-interval="3000">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
