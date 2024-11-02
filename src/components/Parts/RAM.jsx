@@ -7,7 +7,6 @@ import Search from '../Search';
 import LoadingBar from 'react-top-loading-bar'
 import BackToTop from '../BackToTop'
 
-
 const RAM = () => {
 
 
@@ -190,4 +189,4 @@ const RAM = () => {
   )
 }
 
-export default RAM
+export default RAM;

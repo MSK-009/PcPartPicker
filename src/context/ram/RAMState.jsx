@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import RAMContext from "./RAMContext";
 
 const RAMState = (props) => {
-
   const [rams, setRAMs] = useState( [] )
   const host = 'http://localhost:5000'
   const [totalResults, setTotalResults] = useState(null)
