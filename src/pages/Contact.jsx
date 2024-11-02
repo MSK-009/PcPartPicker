@@ -134,9 +134,7 @@ const Contact = () => {
                         <a aria-label="read more reviews" href="" class="cs-button-solid">Read More</a>
                         </div>
                     </section>
-            </div>
-            <div class="lines">
-            </div>
+            </div>  
         </>
     );
 };
