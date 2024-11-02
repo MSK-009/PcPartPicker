@@ -1,5 +1,5 @@
 import React, { useState, useRef, useContext } from 'react'
-import Card from './Card'
+import Card from './ProcessorsCard'
 import ListContext from '../../context/list/ListContext'
 import ProcessorContext from '../../context/processors/ProcessorContext'
 import List from '../List'
@@ -61,7 +61,7 @@ const Processors = () => {
               <h1 className="modal-title fs-5" id="exampleModalLabel">{processor.name}</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <img src={processor.image} className='img-fluid'></img>
+            <img draggable={false} src={processor.image} className='img-fluid'></img>
             <div className="modal-body">
               <p>Codename: {processor.codename}</p>
               <p>Cores: {processor.cores}</p>

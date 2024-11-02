@@ -17,47 +17,48 @@ const List = (props) => {
         Processor: {selectedItem.Processor.CPU_name}
 
         <button className="hover-button-deselect" onClick={() => removeItem("Processor")}>
-            <i className="fa-solid fa-xmark"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
       </div>}
 
       {/* GPU */}
       {selectedItem.GPU && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
         <i className="bi-gpu-card mx-2"></i>
-        <p style={{textAlign:"center", margin:"0", padding:"0"}}>Graphics: {selectedItem.GPU.GPU_name}</p>
-        
+        <p style={{ textAlign: "center", margin: "0", padding: "0" }}>Graphics: {selectedItem.GPU.GPU_name}</p>
+
         <button className="hover-button-deselect" onClick={() => removeItem("GPU")}>
-            <i className="fa-solid fa-xmark"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
       </div>}
 
       {/* Memory */}
       {selectedItem.RAM && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
-        <i class="bi bi-memory mx-2"></i>
-        <p style={{textAlign:"center", margin:"0", padding:"0"}}>RAM : {selectedItem.RAM.RAM_name}</p>
-        
+        <i className="bi bi-memory mx-2"></i>
+        <p style={{ textAlign: "center", margin: "0", padding: "0" }}>RAM : {selectedItem.RAM.RAM_name}</p>
+
         <button className="hover-button-deselect" onClick={() => removeItem("RAM")}>
-            <i className="fa-solid fa-xmark"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
       </div>}
 
       {/* Motherboard */}
       {selectedItem.Motherboard && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
         <i className="bi bi-motherboard mx-2"></i>
-        <p style={{textAlign:"center", margin:"0", padding:"0"}}>Motherboard: {selectedItem.Motherboard.GPU_name}</p>
+        <p style={{ textAlign: "center", margin: "0", padding: "0" }}>Motherboard: {selectedItem.Motherboard.GPU_name}</p>
 
         <button className="hover-button-deselect" onClick={() => removeItem("Motherboard")}>
-            <i className="fa-solid fa-xmark"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
       </div>}
 
 
-      {/* PSU */}
-      {selectedItem.PSU && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
-        <i className="bi bi-plug-fill mx-2"></i>
-        <p style={{textAlign:"center", margin:"0", padding:"0"}}>PSU: {selectedItem.PSU.PSU_name}</p>
-        <button className="hover-button-deselect" onClick={() => removeItem("PSU")}>
-            <i className="fa-solid fa-xmark"></i>
+      {/* SSD */}
+      {selectedItem.SSD && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
+        <i className="bi bi-floppy-fill"></i>
+        <p style={{ textAlign: "center", margin: "0", padding: "0" }}>SSD: {selectedItem.SSD.SSD_name}</p>
+
+        <button className="hover-button-deselect" onClick={() => removeItem("SSD")}>
+          <i className="fa-solid fa-xmark"></i>
         </button>
       </div>}
 
@@ -65,11 +66,23 @@ const List = (props) => {
       {/* Case */}
       {selectedItem.Case && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
         <i className="bi bi-motherboard mx-2" ></i>
-        <p style={{textAlign:"center", margin:"0", padding:"0"}}>Case: {selectedItem.Case.Case_name}</p>
+        <p style={{ textAlign: "center", margin: "0", padding: "0" }}>Case: {selectedItem.Case.Case_name}</p>
         <button className="hover-button-deselect" onClick={() => removeItem("Case")}>
           <i className="fa-solid fa-xmark"></i>
-      </button>
+        </button>
       </div>}
+
+
+      {/* PSU */}
+      {selectedItem.PSU && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
+        <i className="bi bi-plug-fill mx-2"></i>
+        <p style={{ textAlign: "center", margin: "0", padding: "0" }}>PSU: {selectedItem.PSU.PSU_name}</p>
+        <button className="hover-button-deselect" onClick={() => removeItem("PSU")}>
+          <i className="fa-solid fa-xmark"></i>
+        </button>
+      </div>}
+
+
 
 
       {Object.entries(selectedItem).length === 0 && <div className='text-info text-center' style={{ marginTop: "140px" }}>Drag here to add components</div>}

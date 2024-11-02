@@ -1,20 +1,19 @@
 import React, { useState, useRef, useContext, useEffect } from 'react'
-import GraphicsCard from './GraphicsCard.jsx'
+import SSDCard from './SSDCard'
 import ListContext from '../../context/list/ListContext'
-import GPUContext from '../../context/gpu/GPUContext'
+import SSDContext from '../../context/ssd/SSDContext'
 import List from '../List'
 import Search from '../Search';
 import LoadingBar from 'react-top-loading-bar'
 import BackToTop from '../BackToTop'
-import { useLocation } from 'react-router-dom'
 
-const Graphics = () => {
 
-  let location = useLocation()
+const SSD = () => {
 
-  const gpuContext = useContext(GPUContext)
 
-  const { gpus, getGPUs, totalResults } = gpuContext
+  const ssdContext = useContext(SSDContext)
+
+  const { ssds, getSSDs, totalResults } = ssdContext
   
   const listContext = useContext(ListContext)
   const { selectedItem, onDragOver, onDrop, setSelectedItem } = listContext
@@ -24,28 +23,23 @@ const Graphics = () => {
   const [pageSize, setPageSize] = useState(12)
   const [sort, setSort] = useState({})
   const [progress, setProgress] = useState(0)
-  const [ loading, setLoading ] = useState(false)
 
   var nosPages = Math.ceil(totalResults / pageSize)
 
-  const [gpu, setGPU] = useState({
-    image:"",
-    GPU_name: "",
-    Series: "",
-    TDP: "",
-    VRAM: "",
+  const [ssd, setSSD] = useState({
+    Image: "",
+    SSD_name:"",
+    Format: "",
+    Protocol: "",
+    Capacity: "",
     Released: "",
     Price: "",
-    Manufacturer: ""
   })
+  
 
   useEffect(() => {
     setProgress(25)
-    setLoading(true)
-    setProgress(50)
-    getGPUs(pageSize, page, searchTerm, sort)
-    setProgress(75)
-    setLoading(false)
+    getSSDs(pageSize, page, searchTerm, sort)
     setProgress(100)
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }, [page, pageSize, searchTerm, sort])
@@ -53,22 +47,22 @@ const Graphics = () => {
   const ref = useRef(null)
   const refClose = useRef(null)
 
-  const showGPU = (currentGPU) => {
+  const showSSD = (currentSSD) => {
     ref.current.click()
-    setGPU({
-      image: currentGPU.Image,
-      GPU_name: currentGPU.GPU_name,
-      Series: currentGPU.Series,
-      TDP: currentGPU.TDP,
-      VRAM: currentGPU.VRAM,
-      Released: currentGPU.Released,
-      Price: currentGPU.Price,
-      Manufacturer: currentGPU.Manufacturer
+    setSSD({
+        Image: currentSSD.Image,
+        SSD_name: currentSSD.SSD_name,
+        Format: currentSSD.Format,
+        Protocol: currentSSD.Protocol,
+        Capacity: currentSSD.Capacity,
+        Released: currentSSD.Released,
+        Price: currentSSD.Price
     })
   }
+  
 
   const handleRemoveItem = ()=>{
-    const { ["GPU"]: _, ...updatedSelected } = selectedItem;
+    const { ["SSD"]: _, ...updatedSelected } = selectedItem;
     setSelectedItem(updatedSelected);
   }
 
@@ -83,22 +77,22 @@ const Graphics = () => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">{gpu.GPU_name}</h1>
+              <h1 className="modal-title fs-5" id="exampleModalLabel">{ssd.SSD_name}</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <img draggable={false} src={gpu.image} className='img-fluid'></img>
+            <img draggable={false} src={ssd.Image} className='img-fluid'></img>
             <div className="modal-body">
-              <p>Codename: {gpu.Series}</p>
-              <p>Memory: {gpu.VRAM}</p>
-              <p>Power Consuption: {gpu.TDP}</p>
-              <p>Released: {gpu.Released}</p>
-              <p>Price: CDN$ {gpu.Price.slice(0, -4)}</p>
+              <p>Format: {ssd.Format}</p>
+              <p>Protocol: {ssd.Protocol}</p>
+              <p>Capacity: {ssd.Capacity}</p>
+              <p>Released: {ssd.Released}</p>
+              <p>Price: {ssd.Price}</p>
             </div>
             <div className="modal-footer">
               <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button 
                 type="button" 
-                disabled={ selectedItem.GPU && selectedItem.GPU.GPU_name === gpu.GPU_name ? false : true }
+                disabled={ selectedItem.SSD && selectedItem.SSD.SSD_name === ssd.SSD_name ? false : true }
                 onClick={handleRemoveItem}
                 className="btn btn-danger">
                   Remove from your parts
@@ -123,8 +117,8 @@ const Graphics = () => {
                         <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "asc" }) }}>Price: Ascending</button></li>
                         <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "desc" }) }}>Price: Descending</button></li>
                         <li><hr className="dropdown-divider text-primary" /></li>
-                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "GPU_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
-                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "GPU_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
+                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "SSD_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
+                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "SSD_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
                     </ul>
                 </div>
             </div>
@@ -145,7 +139,7 @@ const Graphics = () => {
           <div>
             <div className="collapse" id="collapseExample">
               <div>
-                <Search search={searchTerm} setSearchTerm={setSearchTerm} name="GPU_Search" setPage={setPage} />
+                <Search search={searchTerm} setSearchTerm={setSearchTerm} name="SSD_Search" setPage={setPage} />
               </div>
             </div>
           </div>
@@ -163,9 +157,8 @@ const Graphics = () => {
           </div>
         </div>
         <div className='container d-flex flex-wrap gap-3 align-items-center justify-content-center'>
-        {loading && <InfinitySpin visible={true} width="200" color="#4fa94d" ariaLabel="infinity-spin-loading"/>}
-        {gpus.map((gpu) => (
-            <GraphicsCard gpu={gpu} key={gpu._id} showGPU={showGPU} />
+        {ssds.map((ssd) => (
+            <SSDCard ssd={ssd} key={ssd._id} showSSD={showSSD} />
         ))}
         </div>
       </div>
@@ -197,4 +190,4 @@ const Graphics = () => {
   )
 }
 
-export default Graphics
+export default SSD
