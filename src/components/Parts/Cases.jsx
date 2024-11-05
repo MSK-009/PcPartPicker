@@ -116,8 +116,8 @@ const Cases = () => {
                         <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "asc" }) }}>Price: Ascending</button></li>
                         <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "desc" }) }}>Price: Descending</button></li>
                         <li><hr className="dropdown-divider text-primary" /></li>
-                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "GPU_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
-                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "GPU_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
+                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Case_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
+                        <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Case_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
                     </ul>
                 </div>
             </div>
