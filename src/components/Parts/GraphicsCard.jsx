@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import ListContext from '../../context/list/ListContext'
+import placeholder from '/placeholder.webp';
 
 const GraphicsCard = (props) => {
     const listContext = useContext(ListContext)
@@ -20,7 +21,7 @@ const GraphicsCard = (props) => {
                 >
                 <div className="backgroundEffect"></div>
                 <div className="pic">
-                    <img className="img-thumbnail" src={props.gpu.Image} draggable={false} alt="" style={{objectFit: "contain"}}/>
+                <img className="img-thumbnail" src={props.gpu.Image && props.gpu.Image.startsWith('https') ? props.gpu.Image : placeholder} draggable={false} alt="" style={{objectFit: "contain"}}/>
                     <div className="date bg-success"> <span className="day">{props.gpu.Released.split(" ")[0]}</span>
                         <span className="month">{props.gpu.Released.split(" ")[1]}</span> <span className="year">{props.gpu.Released.split(" ")[2]}</span>
                     </div>

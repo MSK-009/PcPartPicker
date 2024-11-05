@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import ListContext from '../../context/list/ListContext'
+import placeholder from '/placeholder.webp';
 
 const RAMCard = (props) => {
     const listContext = useContext(ListContext)
@@ -21,7 +22,7 @@ const RAMCard = (props) => {
                 >
                 <div className="backgroundEffect"></div>
                 <div className="pic">
-                    <img className="img-thumbnail" src={props.ram.Image} draggable={false} alt="" style={{objectFit: "contain"}}/>
+                    <img className="img-thumbnail" src={props.ram.Image && props.ram.Image.startsWith('https') ? props.ram.Image : placeholder} draggable={false} alt="" style={{objectFit: "contain"}}/>   
                 </div>
                 <div className="content" onClick={(e) => { e.stopPropagation() }}> <p className="h-1 mt-4">{props.ram.RAM_name}</p>
                     <p className="text-muted mt-3">Latency: {props.ram.Latency}</p>
