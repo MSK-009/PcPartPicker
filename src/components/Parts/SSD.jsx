@@ -6,6 +6,7 @@ import List from '../List'
 import Search from '../Search';
 import LoadingBar from 'react-top-loading-bar'
 import BackToTop from '../BackToTop'
+import Progress from '../Progress'
 
 
 const SSD = () => {
@@ -71,7 +72,7 @@ const SSD = () => {
     <>
       <BackToTop/>
       <LoadingBar color='rgb(73, 180, 69)' progress={progress} onLoaderFinished={() => setProgress(0)} />
-      
+      <Progress/>
       {/* Modal for showing info */}
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
