@@ -1,8 +1,8 @@
 const ScrollDown = () => {
     return (
         <div className="scroll-btn-container">
-        <span class="scroll-btn">
-            <div class="scroll-btn-scroll"> </div>
+        <span className="scroll-btn">
+            <div className="scroll-btn-scroll"> </div>
         </span>
         </div>
     )

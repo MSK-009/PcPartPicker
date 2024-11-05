@@ -13,6 +13,7 @@ import Window from './components/Window';
 import Contact from './pages/Contact';
 import Processors from './components/Parts/Processors';
 import Graphics from './components/Parts/Graphics';
+import Motherboard from './components/Parts/Motherboard';
 import RAM from './components/Parts/RAM';
 import SSD from './components/Parts/SSD';
 import Cases from './components/Parts/Cases'
@@ -69,6 +70,7 @@ function App() {
                           <Route exact path="/about" element={<Contact />} />
                           <Route exact path="/processors" element={<Processors />} />
                           <Route exact path="/gpu" element={<Graphics />} />
+                          <Route exact path="/motherboard" element={<Motherboard />} />
                           <Route exact path="/memory" element={<RAM />} />
                           <Route exact path="/storage" element={<SSD />} />
                           <Route exact path="/cases" element={<Cases />} />
