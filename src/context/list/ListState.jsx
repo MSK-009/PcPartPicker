@@ -48,6 +48,10 @@ const ListState = (props) => {
       setSelectedItem({ ...selectedItem, SSD: data });
     }
 
+    else if (sourceListName === 'Case') {
+      setSelectedItem({ ...selectedItem, Case: data });
+    }
+
     else if (sourceListName === 'Power') {
       setSelectedItem({ ...selectedItem, PSU: data });
     }

@@ -15,15 +15,17 @@ import Processors from './components/Parts/Processors';
 import Graphics from './components/Parts/Graphics';
 import RAM from './components/Parts/RAM';
 import SSD from './components/Parts/SSD';
+import Cases from './components/Parts/Cases'
+import Power from './components/Parts/Power';
 
 
 import ListState from './context/list/ListState';
 import ProcessorState from './context/processors/ProcessorState';
 import GPUState from './context/gpu/GPUState';
-import PSUState from './context/psus/PSUState';
 import RAMState from './context/ram/RAMState';
 import SSDState from './context/ssd/SSDState';
-import Power from './components/Parts/Power';
+import CaseState from './context/case/CaseState'
+import PSUState from './context/psus/PSUState';
 
 
 function App() {
@@ -51,31 +53,34 @@ function App() {
   };
   return (
     <>
-              {/* <Window showWindow={showWindow} windowContent={windowContent} closeWindow={closeWindow} /> */}
+      {/* <Window showWindow={showWindow} windowContent={windowContent} closeWindow={closeWindow} /> */}
       <ListState>
         <ProcessorState>
           <GPUState>
-            <PSUState>
-              <RAMState>
-                <SSDState>
-              <BrowserRouter>
-                <Navbar openWindow={openWindow} updateContent={updateContent} />
-                <div>
-                  <Routes>
-                    <Route exact path="/" element={<Home openWindow={openWindow} updateContent={updateContent} />} />
-                    <Route exact path="/about" element={<Contact />} />
-                    <Route exact path="/processors" element={<Processors />} />
-                    <Route exact path="/gpu" element={<Graphics />} />
-                    <Route exact path="/psu" element={<Power />} />
-                    <Route exact path="/memory" element={<RAM />} />
-                    <Route exact path="/storage" element={<SSD />} />
-                  </Routes>
-                </div>
-                <Footer />
-              </BrowserRouter>
+            <RAMState>
+              <SSDState>
+                <CaseState>
+                  <PSUState>
+                    <BrowserRouter>
+                      <Navbar openWindow={openWindow} updateContent={updateContent} />
+                      <div>
+                        <Routes>
+                          <Route exact path="/" element={<Home openWindow={openWindow} updateContent={updateContent} />} />
+                          <Route exact path="/about" element={<Contact />} />
+                          <Route exact path="/processors" element={<Processors />} />
+                          <Route exact path="/gpu" element={<Graphics />} />
+                          <Route exact path="/memory" element={<RAM />} />
+                          <Route exact path="/storage" element={<SSD />} />
+                          <Route exact path="/cases" element={<Cases />} />
+                          <Route exact path="/psu" element={<Power />} />
+                        </Routes>
+                      </div>
+                      <Footer />
+                    </BrowserRouter>
+                  </PSUState>
+                </CaseState>
               </SSDState>
-              </RAMState>
-            </PSUState>
+            </RAMState>
           </GPUState>
         </ProcessorState>
       </ListState>
