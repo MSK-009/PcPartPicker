@@ -113,11 +113,11 @@ const Contact = () => {
                 
             </div>
             <section id="reviews-62">
-                    <div class="cs-container">
-                        <div class="cs-content">
-                            <span class="cs-topper">Our Reviews</span>
-                            <h2 class="cs-title">Words From the Founders</h2>
-                            <p class="cs-text">
+                    <div className="cs-container">
+                        <div className="cs-content">
+                            <span className="cs-topper">Our Reviews</span>
+                            <h2 className="cs-title">Words From the Founders</h2>
+                            <p className="cs-text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
                             </p>
                         </div>
@@ -131,7 +131,7 @@ const Contact = () => {
                                 </li>
                             ))}
                         </ul>
-                        <a aria-label="read more reviews" href="" class="cs-button-solid">Read More</a>
+                        <a aria-label="read more reviews" href="" className="cs-button-solid">Read More</a>
                         </div>
                     </section>
             </div>  

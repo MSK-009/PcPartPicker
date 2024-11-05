@@ -36,9 +36,9 @@ const Home = () => {
               </p>
               {/* <Link className="btn btn-success btn-lg mt-3 text-light" to="/processors">Make Your Own PC</Link> */}
               <br />
-              <Link class="threed-getstarted-btn" to="/processors">
+              <Link className="threed-getstarted-btn" to="/processors">
                 Make Your Own PC&nbsp;&nbsp;
-                <i class="bi bi-pc-display-horizontal"></i>
+                <i className="bi bi-pc-display-horizontal"></i>
               </Link>
             </div>
             <div className="col-md-6 text-center">
@@ -94,7 +94,7 @@ const Home = () => {
             <p className="card-text">Build your ultimate gaming rig with top-tier processors for unbeatable performance!</p>
             <Link to="/processors" className="btn btn-success">
             Get this part&nbsp;&nbsp;
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
               </svg>
             </Link>
@@ -108,7 +108,7 @@ const Home = () => {
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <Link to="/gpu" className="btn btn-success">
               Get this part&nbsp;&nbsp;
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
               </svg>
             </Link>
@@ -122,7 +122,7 @@ const Home = () => {
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <Link to="/motherboard" className="btn btn-success">
             Get this part&nbsp;&nbsp;
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
               </svg>
             </Link>
@@ -136,7 +136,7 @@ const Home = () => {
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <Link to="/memory" className="btn btn-success">
             Get this part&nbsp;&nbsp;
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
               </svg>
             </Link>
@@ -150,7 +150,7 @@ const Home = () => {
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <Link to="/storage" className="btn btn-success">
             Get this part&nbsp;&nbsp;
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
               </svg>
             </Link>
@@ -164,7 +164,7 @@ const Home = () => {
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <Link to="/cases" className="btn btn-success">
             Get this part&nbsp;&nbsp;
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
               </svg>
             </Link>
@@ -178,7 +178,7 @@ const Home = () => {
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <Link to="/psu" className="btn btn-success">
             Get this part&nbsp;&nbsp;
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
               </svg>
             </Link>
