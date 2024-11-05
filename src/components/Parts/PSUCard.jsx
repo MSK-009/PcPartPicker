@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import ListContext from '../../context/list/ListContext'
+import placeholder from '/placeholder.webp';
 
 const PSUCard = (props) => {
 
@@ -23,7 +24,7 @@ const PSUCard = (props) => {
                 >
                 <div className="backgroundEffect"></div>
                 <div className="pic">
-                    <img className="img-thumbnail" src={props.psu.Image} draggable={false} alt="" />
+                    <img className="img-thumbnail" src={props.psu.Image && props.psu.Image.startsWith('https') ? props.psu.Image : placeholder} draggable={false} alt="" style={{ objectFit: "contain" }} />
                 </div>
                 <div className="content" onClick={(e) => { e.stopPropagation() }}> <p className="h-1 mt-4">{props.psu.PSU_name}</p>
                     <p className="text-muted mt-3">Cores: {props.psu.Wattage}</p>

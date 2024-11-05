@@ -1,14 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import ListContext from '../context/list/ListContext'
-
+import Pager from './Pager';
 
 const List = (props) => {
 
   const listContext = useContext(ListContext)
   const { selectedItem, removeItem } = listContext
+  const [nextItem, setNextItem] = useState("");
 
   return (
-    <div style={{ margin: "20px" }}>
+    // this is a chatgpt ahh fix for sticking the buttons on the bottom this will be fixed in future if things break
+    <div className="d-flex flex-column" style={{ height: '47vh' }}>
+    <div style={{ flexGrow: 1 }}> {/* This div takes the remaining space */}
       <h3 className='text-success mb-3'>Your Parts</h3>
 
       {/* CPU */}
@@ -86,9 +89,14 @@ const List = (props) => {
 
 
       {Object.entries(selectedItem).length === 0 && <div className='text-info text-center' style={{ marginTop: "140px" }}>Drag here to add components</div>}
+      
     </div>
-
-
+      <div className='fw-bold text-muted d-flex justify-content-center'>{(nextItem === "" ? "Build Completed!" : "Next Component: ")} {nextItem}</div>  
+      <div className='d-flex justify-content-center'>
+      
+        <Pager selectedItem={selectedItem} setNextItem={setNextItem} />
+      </div> 
+    </div>  
 
   )
 }

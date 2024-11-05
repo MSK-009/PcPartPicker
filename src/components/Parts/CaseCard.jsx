@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import ListContext from '../../context/list/ListContext'
+import placeholder from '/placeholder.webp';
 
 const CaseCard = (props) => {
 
@@ -28,7 +29,9 @@ const CaseCard = (props) => {
             >
                 <div className="backgroundEffect"></div>
                 <div className="pic">
-                    <img className="img-thumbnail" src={props.case.Image} draggable={false} alt="" style={{ objectFit: "contain" }} />
+                
+                    <img className="img-thumbnail" src={props.case.Image && props.case.Image.startsWith('https') ? props.case.Image : placeholder} draggable={false} alt="" style={{objectFit: "contain"}}/>
+
                 </div>
                 <div className="content" onClick={(e) => { e.stopPropagation() }}> <p className="h-1 mt-4">{props.case.Case_name}</p>
                     <p className="text-muted mt-3">Size: {props.case.Size}</p>
