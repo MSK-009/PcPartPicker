@@ -4,6 +4,7 @@ import ListContext from '../../context/list/ListContext'
 import ProcessorContext from '../../context/processors/ProcessorContext'
 import List from '../List'
 import Search from '../Search';
+import Progress from '../Progress'
 
 const Processors = () => {
 
@@ -53,6 +54,7 @@ const Processors = () => {
 
   return (
     <>
+    <Progress/>
       {/* Modal for showing info */}
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">

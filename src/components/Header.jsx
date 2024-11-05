@@ -29,7 +29,7 @@ const Navbar = ({openWindow, updateContent}) => {
                         <li className="nav-item mx-5">
                             <Link className="btn btn-success btn-md text-light" to="/processors" >
                                 Get Started&nbsp;&nbsp;
-                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M3 13h14.586l-5.293 5.293 1.414 1.414L21.414 12l-7.707-7.707-1.414 1.414L17.586 11H3z"></path>
                                 </svg>
                             </Link>

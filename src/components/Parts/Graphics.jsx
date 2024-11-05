@@ -7,6 +7,7 @@ import Search from '../Search';
 import LoadingBar from 'react-top-loading-bar'
 import BackToTop from '../BackToTop'
 import { useLocation } from 'react-router-dom'
+import Progress from '../Progress.jsx'
 
 const Graphics = () => {
 
@@ -77,7 +78,7 @@ const Graphics = () => {
     <>
       <BackToTop/>
       <LoadingBar color='rgb(73, 180, 69)' progress={progress} onLoaderFinished={() => setProgress(0)} />
-      
+      <Progress/>
       {/* Modal for showing info */}
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">

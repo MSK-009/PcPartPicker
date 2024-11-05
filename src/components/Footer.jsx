@@ -85,7 +85,7 @@ const Footer = () => {
 
             <div className="text-center p-4" style={{backgroundColor: "rgba(0, 0, 0, 0.05)"}}>
                 © 2024 All Rights Reserved <span className='text-reset fw-bold'>PcPartsPicker™</span> <br />
-                <Link className="text-reset fw-bold" to="https://github.com/MSK-009/PcPartPicker" target='_blank'><i class="bi bi-github"></i> Visit Github</Link>
+                <Link className="text-reset fw-bold" to="https://github.com/MSK-009/PcPartPicker" target='_blank'><i className="bi bi-github"></i> Visit Github</Link>
             </div>
 
         </footer>
