@@ -10,7 +10,7 @@ const List = (props) => {
 
   return (
     // this is a chatgpt ahh fix for sticking the buttons on the bottom this will be fixed in future if things break
-    <div className="d-flex flex-column" style={{ height: '47vh' }}>
+    <div className="d-flex flex-column" style={{ height: '47vh', flexGrow: 1 }}>
     <div style={{ flexGrow: 1 }}> {/* This div takes the remaining space */}
       <h3 className='text-success mb-3'>Your Parts</h3>
 
@@ -91,7 +91,7 @@ const List = (props) => {
       {Object.entries(selectedItem).length === 0 && <div className='text-info text-center' style={{ marginTop: "140px" }}>Drag here to add components</div>}
       
     </div>
-      <div className='fw-bold text-muted d-flex justify-content-center'>{(nextItem === "" ? "Build Completed!" : "Next Component: ")} {nextItem}</div>  
+      <div className='fw-bold text-muted d-flex justify-content-center'>{(nextItem === "Final" ? "Build Completed!" : "Next Component: ")} {nextItem}</div>  
       <div className='d-flex justify-content-center'>
       
         <Pager selectedItem={selectedItem} setNextItem={setNextItem} />

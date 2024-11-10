@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import logo from "/logo.png"
 import {
     Link,
@@ -7,8 +7,16 @@ import {
   } from "react-router-dom";
   
 import { RxHamburgerMenu } from "react-icons/rx";
+import ListContext from '../context/list/ListContext';
 
 const Navbar = ({openWindow, updateContent}) => {
+    const listContext = useContext(ListContext);
+    const [items, setItems] = useState(listContext.selectedItem);
+
+    useEffect(() => {
+        setItems(listContext.selectedItem);
+    }, [listContext]);
+
     let location = useLocation()
     return (
         <div style={{zIndex:'0'}}>
@@ -52,7 +60,12 @@ const Navbar = ({openWindow, updateContent}) => {
 
                             </ul>
                         </li>
+                        {(Object.keys(items).length === 6) && <li className="nav-item mx-5" >
+                            <Link className={`btn btn-success btn-md text-light ${location.pathname === "/final" ? 'active' : ""}`} to="/final"><i class="bi bi-pc-display-horizontal h6 me-1"></i> Your Build </Link> 
+                        </li>}
+                        
                     </ul>
+                    
                 
                     
                 </div>

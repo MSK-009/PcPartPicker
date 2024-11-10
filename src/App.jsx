@@ -18,6 +18,7 @@ import RAM from './components/Parts/RAM';
 import SSD from './components/Parts/SSD';
 import Cases from './components/Parts/Cases'
 import Power from './components/Parts/Power';
+import FinalPage from './pages/FinalPage';
 
 
 import ListState from './context/list/ListState';
@@ -75,6 +76,7 @@ function App() {
                           <Route exact path="/storage" element={<SSD />} />
                           <Route exact path="/cases" element={<Cases />} />
                           <Route exact path="/psu" element={<Power />} />
+                          <Route exact path="/final" element={<FinalPage />} />
                         </Routes>
                       </div>
                       <Footer />

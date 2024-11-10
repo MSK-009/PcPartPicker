@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Pager = ({ selectedItem, setNextItem }) => {
-    const components = ["Processor", "GPU", "RAM", "SSD", "Case", "PSU"];
-    const urls = ["/processors", "/gpu", "/memory", "/storage", "/cases", "/psu"];
+    // const components = ["Processor", "GPU", "RAM", "Motherboard", "SSD", "Case", "PSU"];
+    const components = ["Processor", "GPU", "RAM", "SSD", "Case", "PSU", "Final"];
+    const urls = ["/processors", "/gpu", "/memory", "/storage", "/cases", "/psu", "/final"];
     const navigate = useNavigate(); // Hook for navigation
 
     const [next, setNext] = useState("");
@@ -40,8 +41,12 @@ const Pager = ({ selectedItem, setNextItem }) => {
                 setPrev(selectedKeys.includes("SSD") ? "/storage" : "/storage");
                 break;
             case "PSU":
-                setNext(selectedKeys.includes("Processor") ? "/processors" : "/processors");
+                setNext(selectedKeys.includes("Final") ? "/final" : "/final");  
                 setPrev(selectedKeys.includes("Case") ? "/cases" : "/cases");
+                break;
+            case "PSU":
+                setNext(selectedKeys.includes("") ? "/final" : "/final"); 
+                setPrev(selectedKeys.includes("PSU") ? "/psu" : "/psu");
                 break;
             default:
                 setNext("");
@@ -107,7 +112,7 @@ const Pager = ({ selectedItem, setNextItem }) => {
                 to={next || "#"}
                 disabled={!next}
             >
-                Next ►
+                Next ► {next}
             </Link>
             <br />
             <div className="fw-light text-muted">Press <span className="fw-bold">Enter</span> to go to next page</div>
