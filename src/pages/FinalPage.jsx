@@ -36,7 +36,7 @@ const FinalPage = () => {
     const itemRows = components.map((component, index) => {
       const { Case_name, GPU_name, Chipset,  PSU_name, CPU_name, RAM_name, SSD_name, Price, Image } = component;
       const name = Case_name || GPU_name || Chipset || PSU_name || CPU_name || RAM_name || SSD_name;
-      const price = parseFloat(Price.replace(/[^\d.-]/g, '')) || 0;
+      const price = Price && typeof Price === 'string' ? parseFloat(Price.replace(/[^\d.-]/g, '')) : 0;
       totalPrice += price;
 
       return (
