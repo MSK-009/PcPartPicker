@@ -36,7 +36,7 @@ const itemsData = [
         name: 'Ahmed Baig',
         location: 'SE-22068',
         imgSrc: 'https://media.licdn.com/dms/image/v2/D4E03AQG_D8qr19YuTQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1723324851136?e=1735171200&v=beta&t=uwIqTgCm4oNCpdPKzumU_lhYcrGmJeZj_4zxvt4J7mc',
-        text: 'The community here is amazing! I got so much help and advice while building my first PC. I love being able to share my progress and get feedback from others. Thank you, PcPartPicker!'
+        text: 'At PcPartPicker, we strive to make PC building accessible, fun, and rewarding for everyone. The community’s support and feedback fuel our mission, and I’m proud to be part of such an amazing group of passionate builders.'
     },
     {
         id: 6,
@@ -50,7 +50,7 @@ const itemsData = [
         name: 'Noor-ul-Talha',
         location: 'SE-22072',
         imgSrc: 'https://media.licdn.com/dms/image/v2/D4D03AQHxSIbK7iHzew/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1728845048687?e=1735171200&v=beta&t=xFV0ln8xeK-zm9-mGUO2pUIJv817f7psFZlVbdYpSNM',
-        text: 'We’ve poured our hearts into PcPartPicker to make it a welcoming space for all PC builders. '
+        text: 'PcPartPicker was born from a shared vision to help people build their dream PCs effortlessly. As a founder, my goal has always been to provide a platform that empowers users with the right tools, knowledge, and a strong community. We’ve poured our hearts into making it a place where anyone—regardless of their experience—can feel confident building their perfect machine.'
     },
 
   ];
@@ -117,9 +117,6 @@ const Contact = () => {
                         <div className="cs-content">
                             <span className="cs-topper">Our Reviews</span>
                             <h2 className="cs-title">Words From the Founders</h2>
-                            <p className="cs-text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
-                            </p>
                         </div>
                         <ul className="cs-card-group">
                             {items.map(item => (

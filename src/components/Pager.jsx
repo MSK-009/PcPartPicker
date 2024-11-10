@@ -117,7 +117,7 @@ const Pager = ({ selectedItem, setNextItem }) => {
                 to={next || "#"}
                 disabled={!next}
             >
-                Next ► {next}
+                Next ►
             </Link>
             <br />
             <div className="fw-light text-muted">Press <span className="fw-bold">Enter</span> to go to next page</div>
