@@ -1,11 +1,25 @@
 import React, { useState, useContext, useEffect } from 'react';
 import ListContext from '../context/list/ListContext';
+import useWindowSize from 'react-use/lib/useWindowSize';
+import Confetti from 'react-confetti'
+import audiourl from '/assets/confetti.mp3'
 
 const FinalPage = () => {
   const listContext = useContext(ListContext);
   const [items, setItems] = useState(listContext.selectedItem || {});
   const [loading, setLoading] = useState(true);
   const [show, setShow] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(true);
+  const { width, height } = useWindowSize()
+
+  var audio = new Audio(audiourl);
+  useEffect(() => {audio.play();},[]);
+  
+  useEffect(() => {
+    setTimeout(() => {
+      setShowConfetti(false);
+    }, 7000);
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,8 +34,8 @@ const FinalPage = () => {
     let totalPrice = 0;
 
     const itemRows = components.map((component, index) => {
-      const { Case_name, GPU_name, PSU_name, CPU_name, RAM_name, SSD_name, Price, Image } = component;
-      const name = Case_name || GPU_name || PSU_name || CPU_name || RAM_name || SSD_name;
+      const { Case_name, GPU_name, Chipset,  PSU_name, CPU_name, RAM_name, SSD_name, Price, Image } = component;
+      const name = Case_name || GPU_name || Chipset || PSU_name || CPU_name || RAM_name || SSD_name;
       const price = parseFloat(Price.replace(/[^\d.-]/g, '')) || 0;
       totalPrice += price;
 
@@ -43,6 +57,11 @@ const FinalPage = () => {
 
   return (
     <>
+      {showConfetti && <Confetti
+        width={width}
+        height={height}
+        tweenDuration={1}
+      />}
       <div
         className="d-flex justify-content-center paddingTB60"
         

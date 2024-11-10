@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Pager = ({ selectedItem, setNextItem }) => {
     // const components = ["Processor", "GPU", "RAM", "Motherboard", "SSD", "Case", "PSU"];
-    const components = ["Processor", "GPU", "RAM", "SSD", "Case", "PSU", "Final"];
-    const urls = ["/processors", "/gpu", "/memory", "/storage", "/cases", "/psu", "/final"];
+    const components = ["Processor", "GPU", "Motherboard", "RAM", "SSD", "Case", "PSU", "Final"];
+    const urls = ["/processors", "/gpu", "/motherboard" , "/memory", "/storage", "/cases", "/psu", "/final"];
     const navigate = useNavigate(); // Hook for navigation
 
     const [next, setNext] = useState("");
@@ -25,12 +25,16 @@ const Pager = ({ selectedItem, setNextItem }) => {
                 setPrev(selectedKeys.includes("PSU") ? "/psu" : "/psu");
                 break;
             case "GPU":
-                setNext(selectedKeys.includes("RAM") ? "/memory" : "/memory");
+                setNext(selectedKeys.includes("Motherboard") ? "/motherboard" : "/motherboard");
                 setPrev(selectedKeys.includes("Processor") ? "/processors" : "/processors");
+                break;
+            case "Motherboard":
+                setNext(selectedKeys.includes("RAM") ? "/memory" : "/memory");
+                setPrev(selectedKeys.includes("GPU") ? "/gpu" : "/gpu");
                 break;
             case "RAM":
                 setNext(selectedKeys.includes("SSD") ? "/storage" : "/storage");
-                setPrev(selectedKeys.includes("GPU") ? "/gpu" : "/gpu");
+                setPrev(selectedKeys.includes("Motherboard") ? "/motherboard" : "/motherboard");
                 break;
             case "SSD":
                 setNext(selectedKeys.includes("Case") ? "/cases" : "/cases");
@@ -44,12 +48,13 @@ const Pager = ({ selectedItem, setNextItem }) => {
                 setNext(selectedKeys.includes("Final") ? "/final" : "/final");  
                 setPrev(selectedKeys.includes("Case") ? "/cases" : "/cases");
                 break;
-            case "PSU":
-                setNext(selectedKeys.includes("") ? "/final" : "/final"); 
-                setPrev(selectedKeys.includes("PSU") ? "/psu" : "/psu");
-                break;
+            // case "Final":
+            //     setNext(selectedKeys.includes("Final") ? "/final" : "/final"); 
+            //     setPrev(selectedKeys.includes("PSU") ? "/psu" : "/psu");
+            //     break;
             default:
                 setNext("");
+                setPrev("");
                 break;
         }
 

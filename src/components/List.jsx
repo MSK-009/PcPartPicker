@@ -36,7 +36,7 @@ const List = (props) => {
 
         {/* Motherboard */}
         {selectedItem.Motherboard && <div className='text-light bg-success' style={{ borderRadius: "8px", padding: '5px', userSelect: "none", display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', cursor: 'default' }}>
-        <i class="bi bi-motherboard-fill mx-2"></i>
+        <i className="bi bi-motherboard-fill mx-2"></i>
           <p style={{ textAlign: "center", margin: "0", padding: "0" }}>Motherboard: {selectedItem.Motherboard.Manufacturer} {selectedItem.Motherboard.Chipset}</p>
 
           <button className="hover-button-deselect" onClick={() => removeItem("Motherboard")}>
@@ -90,7 +90,7 @@ const List = (props) => {
         {Object.entries(selectedItem).length === 0 && <div className='text-info text-center' style={{ marginTop: "140px" }}>Drag here to add components</div>}
 
       </div>
-      <div className='fw-bold text-muted d-flex justify-content-center'>{(nextItem === "" ? "Build Completed!" : "Next Component: ")} {nextItem}</div>
+      <div className='fw-bold text-muted d-flex justify-content-center'>{(nextItem === "Final" ? "Build Completed!" : "Next Component: ")} {nextItem === "Final"? "": nextItem}</div>
       <div className='d-flex justify-content-center'>
 
         <Pager selectedItem={selectedItem} setNextItem={setNextItem} />

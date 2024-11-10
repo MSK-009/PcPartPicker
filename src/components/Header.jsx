@@ -60,7 +60,7 @@ const Navbar = ({openWindow, updateContent}) => {
 
                             </ul>
                         </li>
-                        {(Object.keys(items).length === 6) && <li className="nav-item mx-5" >
+                        {(Object.keys(items).length === 7) && <li className="nav-item mx-5" >
                             <Link className={`btn btn-success btn-md text-light ${location.pathname === "/final" ? 'active' : ""}`} to="/final"><i class="bi bi-pc-display-horizontal h6 me-1"></i> Your Build </Link> 
                         </li>}
                         
