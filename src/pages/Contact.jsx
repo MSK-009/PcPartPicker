@@ -117,9 +117,6 @@ const Contact = () => {
                         <div className="cs-content">
                             <span className="cs-topper">Our Reviews</span>
                             <h2 className="cs-title">Words From the Founders</h2>
-                            <p className="cs-text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
-                            </p>
                         </div>
                         <ul className="cs-card-group">
                             {items.map(item => (
