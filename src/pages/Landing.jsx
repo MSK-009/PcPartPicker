@@ -91,7 +91,7 @@ const Home = () => {
             <img src="./assets/cpu.webp" className="card-img-top h-50" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Processor</h5>
-              <p className="card-text">Build your ultimate gaming rig with top-tier processors for unbeatable performance!</p>
+              <p className="card-text">Power up your PC with top-performing processors for fast gaming.</p>
               <Link to="/processors" className="btn btn-success">
                 Get this part&nbsp;&nbsp;
                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +105,7 @@ const Home = () => {
             <img src="./assets/gpu.jpg" className="card-img-top" alt="..." style={{width: "288px", height: "192px"}} />
             <div className="card-body">
               <h5 className="card-title">Graphics Card</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p className="card-text">Experience stunning visuals and high frame rates with the latest graphics cards.</p>
               <Link to="/gpu" className="btn btn-success">
                 Get this part&nbsp;&nbsp;
                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +119,7 @@ const Home = () => {
             <img src="./assets/mobo.jpg" className="card-img-top h-50" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Motherboard</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p className="card-text">Build your rig on a reliable motherboard that connects and supports all your components.</p>
               <Link to="/motherboard" className="btn btn-success">
                 Get this part&nbsp;&nbsp;
                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +133,7 @@ const Home = () => {
             <img src="./assets/ram.webp" className="card-img-top h-50" alt="..." />
             <div className="card-body">
               <h5 className="card-title">RAM</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p className="card-text">Boost your system’s speed and responsiveness with high-quality RAM.</p>
               <Link to="/memory" className="btn btn-success">
                 Get this part&nbsp;&nbsp;
                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
@@ -147,7 +147,7 @@ const Home = () => {
             <img src="./assets/ssd.jpg" className="card-img-top h-50" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Storage</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p className="card-text">Keep all your games, files, and media safe with high-capacity storage solutions.</p>
               <Link to="/storage" className="btn btn-success">
                 Get this part&nbsp;&nbsp;
                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
@@ -161,7 +161,7 @@ const Home = () => {
             <img src="./assets/case.jpg" className="card-img-top h-50" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Case</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p className="card-text">Showcase and protect your build with stylish, spacious cases for a long period.</p>
               <Link to="/cases" className="btn btn-success">
                 Get this part&nbsp;&nbsp;
                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +175,7 @@ const Home = () => {
             <img src="./assets/psu.jpg" className="card-img-top h-50" alt="..." />
             <div className="card-body">
               <h5 className="card-title">PSU</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p className="card-text">Deliver consistent, reliable power to fuel your system with top-tier PSUs.</p>
               <Link to="/psu" className="btn btn-success">
                 Get this part&nbsp;&nbsp;
                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="size-4 stroke-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
