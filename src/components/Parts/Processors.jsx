@@ -80,6 +80,7 @@ const Processor = () => {
             </div>
             <img draggable={false} src={processor.Image} className='img-fluid' alt={processor.CPUr_name} />
             <div className="modal-body">
+              
               <p>Cores: {processor.Cores}</p>
               <p>Threads: {processor.Threads}</p>
               <p>Base Clock: {processor.Base_clock}</p>
@@ -117,11 +118,9 @@ const Processor = () => {
             <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "asc" }) }}>Price: Ascending</button></li>
             <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Price", order: "desc" }) }}>Price: Descending</button></li>
             <li><hr className="dropdown-divider text-primary" /></li>
-            <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "processor_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
-            <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "processor_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
+            <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "CPU_name", order: "asc" }) }}>Alphabetical: A-Z (Default)</button></li>
+            <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "CPU_name", order: "desc" }) }}>Alphabetical: Z-A</button></li>
             <li><hr className="dropdown-divider text-primary" /></li>
-            <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Cores", order: "desc" }) }}>Cores: High to Low</button></li>
-            <li><button className="dropdown-item" onClick={() => { setSort({ parameter: "Base_Clock", order: "desc" }) }}>Base Clock: High to Low</button></li>
           </ul>
         </div>
       </div>
