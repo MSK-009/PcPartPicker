@@ -41,6 +41,9 @@ const ListState = (props) => {
     else if (sourceListName === 'Graphics') {
       setSelectedItem({ ...selectedItem, GPU: data });
     }
+    else if (sourceListName === 'Motherboard') {
+      setSelectedItem({ ...selectedItem, Motherboard: data });
+    }
     else if (sourceListName === 'RAM') {
       setSelectedItem({ ...selectedItem, RAM: data });
     }
