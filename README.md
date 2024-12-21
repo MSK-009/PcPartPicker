@@ -1,5 +1,5 @@
 # Pc Parts Picker
-Ecommerce Website - Group project for Human Computer Interation Course  
+Group project for Human Computer Interation Course  
 
 ## To become a contributor
 Steps ( **Pre requisites**: ```Install git``` and ```login to your githut account``` in VSCODE )  
